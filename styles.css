@@ -6,8 +6,8 @@
 }
 
 .upper {
-  color: #2A2A2A;
-  background-color: #F2F2F2;  /* Blue */
+  color: #2A2A2A; /* Font color->Dark Gray */
+  background-color: #D4EFDF;  /* Light Green */
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -16,4 +16,40 @@
 .title {
   font-size: 2em;
   font-weight: bold;
+}
+
+.page-container {
+  color: #2A2A2A; /* Font color->Dark Gray */
+  background-color: #D4EFDF; /* Lighter Green */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.page {
+  background-color: #F2F2F2;
+  width: 1200px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.pro-pic {
+  float: left;
+  padding: 10px;
+}
+
+.text {
+  float: left;
+  padding: 5px;
+}
+
+
+
+.footer {
+  background-color: #D4EFDF;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
 }
