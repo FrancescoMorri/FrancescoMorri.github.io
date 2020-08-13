@@ -3,3 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.upper {
+  color: #2A2A2A;
+  background-color: #F2F2F2;  /* Blue */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
