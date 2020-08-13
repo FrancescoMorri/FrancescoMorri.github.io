@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 15px;
 }
 
 .upper {
@@ -10,4 +11,9 @@
   padding: 20px 0;
   display: flex;
   justify-content: center;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
 }
