@@ -49,7 +49,11 @@
 
 .footer {
   background-color: #D4EFDF;
-  padding: 20px 0;
   display: flex;
   justify-content: center;
+}
+
+.clock {
+  display: flex;
+  padding: 10px;
 }
