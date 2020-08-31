@@ -14,7 +14,7 @@
 }
 
 .title {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: bold;
 }
 
@@ -28,6 +28,7 @@
 
 .page {
   background-color: #F2F2F2;
+
   width: 1200px;
   padding: 10px;
   display: flex;
@@ -38,11 +39,53 @@
 .pro-pic {
   float: left;
   padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .text {
   float: left;
+  padding: 10px;
+}
+
+/*.Text-Intro {
   padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}*/
+
+.intro > h2 {
+  font-size: 2em;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.intro {
+  padding: 5px;
+}
+
+.intro > p {
+  font-size: 1.1em;
+}
+
+.Link-Intro {
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Link-Intro > h2 {
+  font-size: 2em;
+}
+
+.linkini {
+  padding: 15px;
+  /*font-size: 1.1em;*/
+}
+
+.linkini > ul li {
+  font-size: 1.1em;
 }
 
 
