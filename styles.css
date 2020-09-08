@@ -88,6 +88,13 @@
   font-size: 1.1em;
 }
 
+.linkini-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.linkini-inside:visited{
+  color: #2D9799 ;
+}
 
 
 .footer {
@@ -99,4 +106,10 @@
 .clock {
   display: flex;
   padding: 10px;
+}
+
+.counter {
+  display: flex;
+  padding: 10px;
+  height: 5px;
 }
