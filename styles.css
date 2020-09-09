@@ -88,6 +88,10 @@
   font-size: 1.1em;
 }
 
+.linkini-inside {
+  color: #4E598C;
+}
+
 .linkini-inside:hover, .linkini-inside:visited:hover  {
   color: #99982D;
 }
