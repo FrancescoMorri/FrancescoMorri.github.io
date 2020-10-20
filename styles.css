@@ -112,6 +112,18 @@
   font-size: 1.1em;
 }
 
+.contacts-inside {
+  color: #4E598C;
+}
+
+.contacts-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.contacts-inside:visited{
+  color: #2D9799 ;
+}
+
 .footer {
   background-color: #D4EFDF;
   display: flex;
