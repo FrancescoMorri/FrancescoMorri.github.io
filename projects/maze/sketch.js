@@ -6,7 +6,7 @@ var current;
 
 
 function setup() {
-  let renderer = createCanvas(600, 600);
+  let renderer = createCanvas(500, 500);
   renderer.parent('container');
   cols = floor(width/w);
   rows = floor(height/w);
