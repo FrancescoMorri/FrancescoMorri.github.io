@@ -1,12 +1,12 @@
 var grid = [];
 var stack = [];
-var w = 20;
+var w = 10;
 var cols, rows;
 var current;
 
 
 function setup() {
-  let renderer = createCanvas(400, 400);
+  let renderer = createCanvas(600, 600);
   renderer.parent('container');
   cols = floor(width/w);
   rows = floor(height/w);
