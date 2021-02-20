@@ -96,7 +96,7 @@ function random_start(){
 
   }
 
-  else if(mouseButton === CENTER){
+  else if(mouseButton === RIGHT){
     start = !start;
   }
 }
