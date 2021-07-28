@@ -100,6 +100,30 @@
   color: #2D9799 ;
 }
 
+.pub-Intro > h2 {
+  font-size: 2em;
+}
+
+.pub {
+  padding: 15px;
+}
+
+.pub-inside > ul li {
+  font-size: 1.1em;
+}
+
+.pub-inside {
+  color: #4E598C;
+}
+
+.pub-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.pub-inside:visited{
+  color: #2D9799 ;
+}
+
 .Contacts-Intro > h2 {
   font-size: 2em;
 }
