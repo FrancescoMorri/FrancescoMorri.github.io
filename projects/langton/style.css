@@ -37,6 +37,8 @@ canvas {
 .comment{
   color: #2A2A2A;
   padding: 20px 0;
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   justify-content: center;
 }
