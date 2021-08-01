@@ -33,7 +33,15 @@ canvas {
   justify-content: center;
 }
 
-.container > p{
+.container{
+  position: relative;
+}
+
+.inside-container{
+  position: absolute;
+}
+
+.inside-container > p{
   color: #F3F3F3;
   background: #2A2A2A;
   font-size: 1.5em
