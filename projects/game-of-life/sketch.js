@@ -119,6 +119,8 @@ function keyPressed(){
     }
   } else if (key == '1') {
     create_configurations(1);
+  } else if (key == '2') {
+    create_configurations(2);
   }
 }
 
@@ -172,6 +174,55 @@ function create_configurations(config){
     world[x+35][y-2] = 1;
     world[x+34][y-1] = 1;
     world[x+35][y-1] = 1;
+  }
+  else if (config == 2) {
+    //Simkin glider gun
+    let x = 7;
+    let y = 7;
+    
+    world[x][y] = 1;
+    world[x+1][y] = 1;
+    world[x][y+1] = 1;
+    world[x+1][y+1] = 1;
+
+    world[x+7][y] = 1;
+    world[x+8][y] = 1;
+    world[x+7][y+1] = 1;
+    world[x+8][y+1] = 1;
+
+    world[x+4][y+3] = 1;
+    world[x+5][y+3] = 1;
+    world[x+4][y+4] = 1;
+    world[x+5][y+4] = 1;
+
+    world[x+21][y+10] = 1;
+    world[x+21][y+11] = 1;
+    world[x+21][y+12] = 1;
+    world[x+22][y+9] = 1;
+    world[x+22][y+12] = 1;
+    world[x+23][y+9] = 1;
+    world[x+23][y+12] = 1;
+    
+    world[x+25][y+9] = 1;
+    world[x+26][y+9] = 1;
+    world[x+27][y+10] = 1;
+    world[x+28][y+11] = 1;
+    world[x+27][y+12] = 1;
+    world[x+26][y+13] = 1
+
+    world[x+31][y+11] = 1;
+    world[x+32][y+11] = 1;
+    world[x+31][y+12] = 1;
+    world[x+32][y+12] = 1;
+
+    world[x+20][y+17] = 1;
+    world[x+21][y+17] = 1;
+    world[x+20][y+18] = 1;
+    world[x+21][y+19] = 1;
+    world[x+22][y+19] = 1;
+    world[x+23][y+19] = 1;
+    world[x+23][y+20] = 1;
+
   }
 
 }
