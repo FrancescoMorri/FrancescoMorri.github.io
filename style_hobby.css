@@ -21,6 +21,7 @@
   .page-container {
     color: #2A2A2A; /* Font color->Dark Gray */
     background-color: #D4EFDF; /* Lighter Green */
+    background-image: linear-gradient(#9a83ee, #D4EFDF);
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;

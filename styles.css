@@ -11,10 +11,12 @@
   padding: 20px 0;
   display: flex;
   justify-content: center;
+  /*background-image: linear-gradient(rgb(173, 46, 173), rgb(233, 233, 68))*/
 }
 
 .title {
   font-size: 3em;
+  
   font-weight: bold;
 }
 
@@ -24,6 +26,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  background-image: linear-gradient(#D4EFDF, #9a83ee)
 }
 
 .page {
@@ -149,9 +152,10 @@
 }
 
 .footer {
-  background-color: #D4EFDF;
+  background-color: #9a83ee;
   display: flex;
   justify-content: center;
+  
 }
 
 .clock {
