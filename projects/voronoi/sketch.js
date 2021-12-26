@@ -8,7 +8,7 @@ var N_points = 2; //number for starting
 var cnv;
 
 function setup() {
-  cnv = createCanvas(300, 300);
+  cnv = createCanvas(500, 500);
   cnv.parent('container');
   pixelDensity(scaling);
   
