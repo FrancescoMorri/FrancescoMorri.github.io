@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+html { 
+  background: linear-gradient(#D4EFDF, #9a83ee) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.upper {
+  color: #2A2A2A; /* Font color->Dark Gray */
+  /*background-color: #D4EFDF;  /* Light Green */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  /*background-image: linear-gradient(rgb(173, 46, 173), rgb(233, 233, 68))*/
+}
+
+.title {
+  font-size: 3em;
+  
+  font-weight: bold;
+}
+
+.page-container {
+  color: #2A2A2A; /* Font color->Dark Gray */
+  /*background-color: #D4EFDF; /* Lighter Green */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  /*background-image: linear-gradient(#D4EFDF, #9a83ee)*/
+}
+
+.page {
+  background-color: #F2F2F2;
+
+  width: 1200px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.pro-pic {
+  float: left;
+  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.text {
+  float: left;
+  padding: 10px;
+}
+
+/*.Text-Intro {
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}*/
+
+.intro > h2 {
+  font-size: 2em;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.intro > hr {
+  background-color: #817c7c;
+  width: auto;
+  border-width: 0px;
+  height: 0.2em;
+}
+
+.intro {
+  padding: 5px;
+}
+
+.intro > p {
+  font-size: 1.1em;
+}
+
+.Link-Intro {
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Link-Intro > h2 {
+  font-size: 2em;
+}
+
+.linkini {
+  padding: 15px;
+  /*font-size: 1.1em;*/
+}
+
+.linkini > ul li {
+  font-size: 1.1em;
+}
+
+.linkini-inside {
+  color: #4E598C;
+}
+
+.linkini-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.linkini-inside:visited{
+  color: #2D9799 ;
+}
+
+.pub-Intro > h2 {
+  font-size: 2em;
+}
+
+.pub {
+  padding: 15px;
+}
+
+.pub-inside > ul li {
+  font-size: 1.1em;
+}
+
+.pub-inside {
+  color: #4E598C;
+}
+
+.pub-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.pub-inside:visited{
+  color: #2D9799 ;
+}
+
+.Contacts-Intro > h2 {
+  font-size: 2em;
+}
+
+.Contacts {
+  padding: 15px;
+}
+
+.contacts-inside > ul li {
+  font-size: 1.1em;
+}
+
+.contacts-inside {
+  color: #4E598C;
+}
+
+.contacts-inside:hover, .linkini-inside:visited:hover  {
+  color: #99982D;
+}
+
+.contacts-inside:visited{
+  color: #2D9799 ;
+}
+
+.footer {
+  background-color: #9a83ee;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.clock {
+  display: flex;
+  padding: 10px;
+}
+
+.counter {
+  display: flex;
+  padding: 10px;
+  height: 5px;
+}
