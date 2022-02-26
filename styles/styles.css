@@ -5,8 +5,9 @@
   font-size: 15px;
 }
 
+
 html { 
-  background: linear-gradient(#D4EFDF, #9a83ee) no-repeat center center fixed; 
+  background: linear-gradient(rgb(0, 223, 119), rgb(159, 0, 233)) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,7 +15,7 @@ html {
 }
 
 .upper {
-  color: #2A2A2A; /* Font color->Dark Gray */
+  color: #181818; /* Font color->Dark Gray */
   /*background-color: #D4EFDF;  /* Light Green */
   padding: 20px 0;
   display: flex;
@@ -29,8 +30,9 @@ html {
 }
 
 .page-container {
-  color: #2A2A2A; /* Font color->Dark Gray */
+  color: #181818; /* Font color->Dark Gray */
   /*background-color: #D4EFDF; /* Lighter Green */
+  
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -38,8 +40,8 @@ html {
 }
 
 .page {
-  background-color: #F2F2F2;
-
+  background-color: #D4EFDF;
+  border-radius: 25px;
   width: 1200px;
   padding: 10px;
   display: flex;
@@ -160,7 +162,8 @@ html {
 }
 
 .footer {
-  background-color: #9a83ee;
+  /*background-color: #9a83ee;*/
+  color: #181818;
   display: flex;
   justify-content: center;
   

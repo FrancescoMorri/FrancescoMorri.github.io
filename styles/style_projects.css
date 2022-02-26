@@ -7,7 +7,7 @@
 }
 
 html { 
-  background: linear-gradient(#D4EFDF, #9a83ee) no-repeat center center fixed; 
+  background: linear-gradient(rgb(0, 223, 119), rgb(159, 0, 233)) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,4 +80,5 @@ html {
   margin: 20px 1.15%;
   /*height: 200px;*/
   background-color: #D2D6FB;    /* Light gray */
+  border-radius: 15px;
 }

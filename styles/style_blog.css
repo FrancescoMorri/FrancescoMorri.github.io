@@ -60,22 +60,20 @@ html {
   padding: 10px;
 }
 
-/*.Text-Intro {
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}*/
 
 .intro > h2 {
   font-size: 2em;
-  padding: 5px;
+  padding: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+.intro > h3 {
+  font-size: 1em;
+  padding-bottom: 5px;
 }
 
 .intro > hr {
   background-color: #817c7c;
-  width: auto;
   border-width: 0px;
   height: 0.2em;
 }
@@ -86,6 +84,7 @@ html {
 
 .intro > p {
   font-size: 1.1em;
+  padding-bottom: 5px;
 }
 
 .Link-Intro {

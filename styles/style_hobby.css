@@ -4,10 +4,19 @@
     box-sizing: border-box;
     font-size: 15px;
   }
+
+  html { 
+    background: linear-gradient(rgb(0, 223, 119), rgb(159, 0, 233)) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
   
   .upper {
     color: #2A2A2A; /* Font color->Dark Gray */
-    background-color: #D4EFDF;  /* Light Green */
+    /*background-color: #D4EFDF;  /* Light Green */
+    height: 50px;
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -20,8 +29,8 @@
   
   .page-container {
     color: #2A2A2A; /* Font color->Dark Gray */
-    background-color: #D4EFDF; /* Lighter Green */
-    background-image: linear-gradient(#9a83ee, #D4EFDF);
+    /*background-color: #D4EFDF; /* Lighter Green */
+    /*background-image: linear-gradient(#9a83ee, #D4EFDF);*/
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -29,7 +38,7 @@
 
   .page-container::before {
     /*content:"";*/
-    background-color: #D4EFDF;
+    /*background-color: #D4EFDF;*/
     position: absolute;
     height: 100%;
     width: 4000px;
@@ -39,7 +48,7 @@
   
   .page {
     background-color: #F2F2F2;
-  
+    border-radius: 25px;
     width: 1200px;
     padding: 10px;
     display: flex;
