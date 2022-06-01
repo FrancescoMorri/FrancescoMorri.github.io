@@ -144,6 +144,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   color: #2D9799 ;
 }
 
+.twitter-timeline {
+  float:right;
+}
+
 .Contacts-Intro > h2 {
   font-size: 2em;
 }
