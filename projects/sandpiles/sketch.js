@@ -1,5 +1,5 @@
 var grid = [];
-var max_sand = 5;
+var max_sand = 4;
 var scl = 5;
 var color_list = ['#900C3F', '#C70039', '#FF5733', '#FFC300', '#DAF7A6', '#B09104'];
 
@@ -11,7 +11,12 @@ function setup() {
     grid[i] = [];
     for(let j = 0; j < floor(height/scl); j++){
       
-      grid[i][j] = 0;
+      if(random() < 0.25){
+        grid[i][j] = random([1,2,3]);
+      }
+      else{
+        grid[i][j] = 0;
+      }
     }
   }
   //grid[floor(width/(2*scl))][floor(height/(2*scl))] = 1000000;
@@ -21,10 +26,9 @@ function setup() {
 
 function draw() {
 
+  rnd_add_sand(1);
   render();
-  for(let i = 0; i<100; i++){
-    update();
-  }
+  update();
   
 }
 
@@ -86,5 +90,13 @@ function add_sand(){
   let x = floor(mouseX/scl);
   let y = floor(mouseY/scl);
   
-  grid[x][y] += 50000;
+  grid[x][y] += 1000;
+}
+
+function rnd_add_sand(new_grains){
+  for(let i = 0; i<new_grains; i++){
+    let rx = floor(random(0,floor(width/scl)));
+    let ry = floor(random(0,floor(height/scl)));
+    grid[rx][ry] += 1;
+  }
 }
