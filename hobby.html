@@ -2,13 +2,50 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Francesco Morri</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="styles/style_hobby.css">
-    <link rel="icon" type="image/png" href="online_stuff/icon.ico"/>
+    <script language="javascript">
+      var favicon_images = ['online_stuff/pixil-frame-0.png',
+                            'online_stuff/pixil-frame-1.png',
+                            'online_stuff/pixil-frame-2.png',
+                            'online_stuff/pixil-frame-3.png',
+                            'online_stuff/pixil-frame-4.png',
+                            'online_stuff/pixil-frame-5.png',
+                            'online_stuff/pixil-frame-6.png',
+                            'online_stuff/pixil-frame-7.png',
+                            'online_stuff/pixil-frame-8.png',
+                            'online_stuff/pixil-frame-9.png',
+                            'online_stuff/pixil-frame-10.png',
+                            'online_stuff/pixil-frame-11.png',
+                            'online_stuff/pixil-frame-12.png',
+                            'online_stuff/pixil-frame-13.png',
+                            'online_stuff/pixil-frame-14.png',
+                            'online_stuff/pixil-frame-15.png',];
+      image_counter = 0; // To keep track of the current image
+
+      setInterval(function() {
+      // remove current favicon
+      if(document.querySelector("link[rel='icon']") !== null)
+      document.querySelector("link[rel='icon']").remove();
+      if(document.querySelector("link[rel='shortcut icon']") !== null)
+      document.querySelector("link[rel='shortcut icon']").remove();
+      
+      // add new favicon image
+      document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/png">');
+      
+      // If last image then goto first image
+      // Else go to next image    
+      if(image_counter == favicon_images.length -1)
+      image_counter = 0;
+      else
+      image_counter++;}, 200);
+    </script>
   </head>
   <body>
-    <div class="upper">
-      
+    <div class="upper-container">
+      <div class="upper">
+        <div class="title">Hobbies</div>
+      </div>
     </div>
 
     <div class="page-container">
@@ -50,6 +87,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="footer">
+
     </div>
   </body>
 </html>
