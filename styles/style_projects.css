@@ -5,6 +5,7 @@
   /*background-color: #FF1493;*/
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #FF1493;
 }
 /*
 html {
@@ -49,6 +50,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   flex-wrap: nowrap;
   justify-content: center;
   font-weight: bold;
+  background-color: #F0F3F5;
 }
 
 
@@ -57,6 +59,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   margin: 10px;
   font-size: 1.5em;
   text-decoration: underline;
+  background-color: #F0F3F5;
 }
 
 .snapshot {
@@ -64,36 +67,61 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   padding-top: 0;
   padding-right: 10px;
   padding-left: 10px;
+  background-color: #F0F3F5;
+}
+
+.snapshot > a {
+  background-color: #F0F3F5;
 }
 
 .comment {
   float: left;
   margin: 5px;
   overflow: hidden;  /* This is important */
+  background-color: #F0F3F5;
+}
+
+.comment > p{
+  background-color: #F0F3F5;
+}
+
+.comment > p > i{
+  background-color: #F0F3F5;
 }
 
 .footer {
-  overflow: hidden;
+  /*overflow: hidden;*/
+  float: left;
+  display: flex;
   /*background-image: linear-gradient(#9a83ee, #D4EFDF);*/
 
 }
 
+.big-footer {
+  overflow: hidden;
+}
+
 .linkini-inside {
   color: #4E598C;
+  background-color: #F0F3F5;
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
   color: #99982D;
+  background-color: #F0F3F5;
 }
 
 .linkini-inside:visited{
   color: #2D9799 ;
+  background-color: #F0F3F5;
 }
 
 .column {
-  float: left;
-  width: 31%;
-  height: 245px;
+  flex: 1;
+  /*float: left;*/
+  /*width: 31%;*/
+  height: auto;
+  min-height: 200px;
   margin: 20px 1.15%;
   border-style: double;
   border-width: thick;
