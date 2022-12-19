@@ -55,7 +55,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .page {
-  background-color: #f5f5f0;
+  background-color: #BDB4BF;
   border-style: double;
   border-width: thick;
   width: 1200px;
@@ -122,15 +122,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .linkini-inside {
-  color: #4E598C;
+  color: #FB5607;
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
-  color: #99982D;
+  color: #0091AD;
 }
 
 .linkini-inside:visited{
-  color: #2D9799 ;
+  color: #240B36 ;
 }
 
 .pub-Intro > h2 {
@@ -147,15 +147,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .pub-inside {
-  color: #4E598C;
+  color: #FB5607;
 }
 
-.pub-inside:hover, .linkini-inside:visited:hover  {
-  color: #99982D;
+.pub-inside:hover, .pub-inside:visited:hover  {
+  color: #0091AD;
 }
 
 .pub-inside:visited{
-  color: #2D9799 ;
+  color: #240B36 ;
 }
 
 .twitter-timeline {
@@ -176,15 +176,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .contacts-inside {
-  color: #4E598C;
+  color: #FB5607;
 }
 
-.contacts-inside:hover, .linkini-inside:visited:hover  {
-  color: #99982D;
+.contacts-inside:hover, .contacts-inside:visited:hover  {
+  color: #0091AD;
 }
 
 .contacts-inside:visited{
-  color: #2D9799 ;
+  color: #240B36 ;
 }
 
 .footer {

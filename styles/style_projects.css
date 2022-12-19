@@ -50,7 +50,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   flex-wrap: nowrap;
   justify-content: center;
   font-weight: bold;
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 
@@ -59,7 +59,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   margin: 10px;
   font-size: 1.5em;
   text-decoration: underline;
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .snapshot {
@@ -67,26 +67,26 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   padding-top: 0;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .snapshot > a {
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .comment {
   float: left;
   margin: 5px;
   overflow: hidden;  /* This is important */
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .comment > p{
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .comment > p > i{
-  background-color: #F0F3F5;
+  background-color: #BDB4BF;
 }
 
 .footer {
@@ -102,18 +102,18 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .linkini-inside {
-  color: #4E598C;
-  background-color: #F0F3F5;
+  color: #FB5607;
+  background-color: #BDB4BF;
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
-  color: #99982D;
-  background-color: #F0F3F5;
+  color: #0091AD;
+  background-color: #BDB4BF;
 }
 
 .linkini-inside:visited{
-  color: #2D9799 ;
-  background-color: #F0F3F5;
+  color: #240B36 ;
+  background-color: #BDB4BF;
 }
 
 .column {
@@ -126,7 +126,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   border-style: double;
   border-width: thick;
   border-color: #000000;
-  background-color: #F0F3F5;    /* Light gray */
+  background-color: #BDB4BF;    /* Light gray */
   /*border-radius: 15px;*/
   transition: all .2s ease-in-out;
 }

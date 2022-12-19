@@ -53,7 +53,7 @@
   }
   
   .page {
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
     border-style: double;
     border-width: thick;
     width: 1200px;
@@ -65,14 +65,14 @@
   }
   
   .pics-left {
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
     float: left;
     padding: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
   .pics-right {
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
     float: right;
     padding: 10px;
     padding-top: 10px;
@@ -80,7 +80,7 @@
   }
   
   .text {
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
     float: left;
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
@@ -101,13 +101,13 @@
   }
   
   .intro {
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
     padding: 5px;
   }
   
   .intro > p {
     font-size: 1.1em;
-    background-color: #f5f5f0;
+    background-color: #BDB4BF;
   }
   
   .Link-Intro {
