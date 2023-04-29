@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Interesting Stuff</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <link rel="stylesheet" href="styles/style_projects.css">
     <!--<link rel="icon" type="image/png" href="online_stuff/icon.ico"/>-->
     <script language="javascript">
@@ -137,8 +138,44 @@
           </div>
         </div>
       </div>
+      <div class="footer">
+        <div class='column'>
+          <h3 class='proj'>Wave Function Collapse</h3>
+          <div class="comment">
+          <div class='snapshot'><a href="projects/wave-collapse/index.html" ><img src="online_stuff/wave-function-collapse.png" width="150"></a></div>
+          <p>Very basic implementation of the algorithm called <i>wave function collapse</i>. The (simplified) idea behind it is to keep in every cell every possible option that respects
+            the rules imposed (rules between neighbours). Then when a neighbour is updated, the options no longer viable are removed. This is repeated until no more oprions are possible anywhere in the map.
+          </p>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
-
+    <canvas class="background"></canvas>
+    <script>
+      window.onload = function() {
+            Particles.init({
+              selector: '.background',
+              color: '#17140B',
+              maxParticles: 130,
+              sizeVariations: 2,
+              minDistance: 150,
+              connectParticles: true,
+              /*responsive: [
+                {
+                  breakpoint: 768,
+                  options: {
+                    maxParticles: 80
+                  }
+                }, {
+                  breakpoint: 375,
+                  options: {
+                    maxParticles: 50
+                  }
+                }
+              ]*/
+            });
+          };
+    </script>  
   </body>
 </html>
