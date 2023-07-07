@@ -1,9 +1,9 @@
 var att = [];
 var tail_pos = [];
 var satellites = [];
-const n_sat = 10;
+const n_sat = 50;
 const n_magn = 10;
-const radius = 70;
+const radius = 100;
 const G = 50;
 
 function setup() {
@@ -16,7 +16,7 @@ function setup() {
     let x = width / 2 + radius * cos(a);
     let y = height / 2 + radius * sin(a);
     satellites[i] = new planet(x, y, c);
-    satellites[i].vel = p5.Vector.random2D();
+    //satellites[i].vel = p5.Vector.random2D();
   }
     /*
   for (let i = 0; i < n_magn; i++) {
@@ -26,7 +26,7 @@ function setup() {
     att.push(new magnets(xx, yy, -1));
   }
   */
-    att.push(new magnets(width/2, height/2, -1));
+  //att.push(new magnets(width/2, height/2, -1));
   background(10);
 }
 
@@ -50,7 +50,7 @@ function draw() {
 function add_magn() {
   if (mouseButton == LEFT) {
     att.push(new magnets(mouseX, mouseY, -1));
-  } /*else if (mouseButton == LEFT) {
-    att.push(new magnets(mouseX, mouseY, -1));
-  }*/
+  } else if (mouseButton == RIGHT) {
+    att.push(new magnets(mouseX, mouseY, 1));
+  }
 }
