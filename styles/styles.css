@@ -197,6 +197,32 @@ body {
   
 }
 
+.scintro > h2 {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.scfooter {
+  /*overflow: hidden;*/
+  padding-top: 10px;
+  float: left;
+  display: flex;
+  /*background-image: linear-gradient(#9a83ee, #D4EFDF);*/
+
+}
+
+.scdiv {
+  margin: 20px 1.15%;
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 100;
+}
+
 .clock {
   display: flex;
   padding: 10px;
