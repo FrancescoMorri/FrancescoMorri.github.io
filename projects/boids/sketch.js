@@ -8,11 +8,11 @@ function setup() {
   cv.parent('container');
   for (let i = 0; i < 100; i++) {
     let pos = createVector(random(0, width), random(0, height));
-    let vel = p5.Vector.random2D().mult(5);
+    let vel = p5.Vector.random2D().mult(2);
     flock[i] = new boids(pos, vel, 50);
   }
 
-  align_slider = createSlider(1,5,1,0.1);
+  align_slider = createSlider(0,2,0.5,0.1);
   align_slider.parent('inside-container')
   align_slider.position(10,5);
   align_slider.style('width', '50px');
@@ -20,7 +20,7 @@ function setup() {
   align_label.position(align_slider.x + align_slider.width, align_slider.y);
   align_label.parent('inside-container');
 
-  cohesion_slider = createSlider(1,5,1,0.1);
+  cohesion_slider = createSlider(0,2,1,0.1);
   cohesion_slider.parent('inside-container')
   cohesion_slider.position(10,25);
   cohesion_slider.style('width', '50px');
@@ -28,7 +28,7 @@ function setup() {
   cohesion_label.position(cohesion_slider.x + cohesion_slider.width, cohesion_slider.y);
   cohesion_label.parent('inside-container');
 
-  avoid_slider = createSlider(1,5,1,0.1);
+  avoid_slider = createSlider(0,2,0.9,0.1);
   avoid_slider.parent('inside-container')
   avoid_slider.position(10,45);
   avoid_slider.style('width', '50px');

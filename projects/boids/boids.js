@@ -5,9 +5,11 @@ class boids {
       this.acceleration = createVector();
       this.mass = mass;
       this.size = map(mass, 10, 100, 5, 25);
-      this.radius = 80;
+      this.radius_cohesion = 25;
+      this.radius_avoid = 20;
+      this.radius_align = 30;
       this.max_speed = 2;
-      this.max_force = 0.2;
+      this.max_force = 0.03;
     }
   
     align(boids) {
@@ -16,7 +18,7 @@ class boids {
       for (let other of boids) {
         if (other != this) {
           let d = p5.Vector.dist(this.position, other.position);
-          if (d <= this.radius) {
+          if (d <= this.radius_align) {
             avg_speed.add(other.velocity);
             count++;
           }
@@ -38,7 +40,7 @@ class boids {
       for(let other of boids){
         if(other != this){
           let d = p5.Vector.dist(this.position, other.position);
-          if(d <= this.radius){
+          if(d <= this.radius_cohesion){
             center_mass.add(other.position);
             count++;
           }
@@ -61,7 +63,7 @@ class boids {
       for(let other of boids){
         if(other != this){
           let d = p5.Vector.dist(this.position, other.position);
-          if(d <= this.radius){
+          if(d <= this.radius_avoid){
             let pos = this.position.copy();
             let other_pos = other.position.copy();
             let conj = other_pos.sub(pos);
@@ -107,8 +109,8 @@ class boids {
     update() {
       
       this.velocity.add(this.acceleration);
-      this.position.add(this.velocity);
       this.velocity.limit(this.max_speed);
+      this.position.add(this.velocity);
     }
   
     check_edges() {
