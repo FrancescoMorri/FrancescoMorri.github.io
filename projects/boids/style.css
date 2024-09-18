@@ -1,10 +1,20 @@
+@font-face {
+  font-family: 'hyperlegible';
+  src:  url('fonts/Atkinson-Hyperlegible-Regular-102a.woff2') format('woff2'),
+        url('fonts/Atkinson-Hyperlegible-Regular-102.woff') format('woff'),
+       url('fonts/Atkinson-Hyperlegible-Regular-102.ttf') format('truetype'),
+       url('fonts/Atkinson-Hyperlegible-Bold-102a.woff2') format('woff2'),
+        url('fonts/Atkinson-Hyperlegible-Bold-102.woff') format('woff'),
+       url('fonts/Atkinson-Hyperlegible-Bold-102.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
     background-color: #BDB4BF;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'hyperlegible', Arial, Helvetica, sans-serif;
   }
   /*html, body {
     margin: 0;

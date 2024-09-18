@@ -37,6 +37,9 @@ function draw() {
     for (let i = 0; i < n_sat; i++) {
       satellites[i].show();
     }
+    for (let i = 0; i < att.length; i++) {
+      att[i].show();
+    }
   }
 
   for (let i = 0; i < n_sat; i++) {
