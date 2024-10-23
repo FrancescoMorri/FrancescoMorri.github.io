@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+    <title> 2D Cellular Automaton </title>
+  </head>
+  <body>
+    <div class="upper">
+      <div class="title">2D Cellular Automaton</div>
+    </div>
+
+    <div class="up-container">
+      <div id="container" class="container">
+        <script src="sketch.js"></script>
+        <div id="inside-container" class="inside-container"></div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="text">
+        The simulation runs automatically, in the lower box you can change the rule set for the automata. The max value is 4294967296. As soon as the rule is changed the simulation restarts. Pressing 's' after clinking on the canvas takes a screenshot of the current frame.
+        Some nice behaviours: 123456780, 12345670, 1234505, 12345054, 123450543, 76564534, 4294967286, 42949673.
+    </div>
+    </div>
+  </body>
+</html>
