@@ -16,7 +16,8 @@
 
 
 body {
-  background-color: #A2C7E5;
+  /*background-color: #A2C7E5;*/
+  background-color: #88CCEE;
 }
 
 
@@ -130,14 +131,17 @@ body {
 
 .linkini-inside {
   color: #FFD23F;
+  font-size: 1.1em;
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
   color: #30638E;
+  font-weight: bold;
 }
 
 .linkini-inside:visited{
   color: #FFD23F ;
+  font-weight: bold;
 }
 
 .pub-Intro > h2 {
@@ -155,14 +159,17 @@ body {
 
 .pub-inside {
   color: #FFD23F;
+  font-size: 1.1em;
 }
 
 .pub-inside:hover, .pub-inside:visited:hover  {
   color: #30638E;
+  font-weight: bold;
 }
 
 .pub-inside:visited{
   color: #FFD23F ;
+  font-weight: bold;
 }
 
 .twitter-timeline {
@@ -184,6 +191,7 @@ body {
 
 .contacts-inside {
   color: #FFD23F;
+  font-size: 1.1em;
 }
 
 .contacts-inside:hover, .contacts-inside:visited:hover  {
