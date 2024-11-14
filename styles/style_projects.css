@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: #A2C7E5;
+  background-color: #365768;
 }
 
 
@@ -31,12 +31,13 @@ body {
   /*background-color: rgb(25, 83, 95, 0.7);
   color: #d1a000; /* Font color->Dark Gray */
   /*background-color: #FF1493;*/
-  color: #000000;
+  color: #ffffff;
   padding: 20px 0;
   display: flex;
   justify-content: center;
   width: 30%;
   border-radius: 30px;
+  z-index: 1;
 }
 
 .title {
@@ -46,7 +47,7 @@ body {
 }
 
 .page-container {
-  color: #000000; /* Font color->Dark Gray */
+  color: #c5c5c5; /* Font color->Dark Gray */
   /*background-color: #9a83ee; /* Lighter Green */
   /*background-color: #FF1493;*/
   display: flex;
@@ -62,7 +63,7 @@ body {
   margin: 10px;
   font-size: 1.5em;
   text-decoration: underline;
-  background-color: #A07178;
+  background-color: #161616;
 }
 
 .snapshot {
@@ -115,8 +116,8 @@ body {
   margin: 20px 1.15%;
   border-style: double;
   border-width: thick;
-  border-color: #000000;
-  background-color: #A07178;    /* Light gray */
+  border-color: #c5c5c5;
+  background-color: #161616;    /* Light gray */
   /*border-radius: 15px;*/
   transition: all .2s ease-in-out;
 }

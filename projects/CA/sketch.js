@@ -11,13 +11,12 @@ let slider;
 let valueDisplayer;
 
 function setup() {
-    let cv = createCanvas(600,600);
-    cv.parent('container');
+  let cv = createCanvas(600,600);
+  cv.parent('container');
   
 
   input = createInput("123456780");
   input.parent('inside-container');
-  input.style('font-size', '15px');
   input.position(0, height-25);
 
   ruleValue = int(input.value());

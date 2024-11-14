@@ -13,7 +13,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
-    background-color: #BDB4BF;
+    background-color: #161616;
     font-family: 'hyperlegible', Arial, Helvetica, sans-serif;
   }
   /*html, body {
@@ -26,8 +26,8 @@
   
   
   .upper {
-    color: #000000; /* Font color->Dark Gray */
-    background-color: #BDB4BF;  /* Light Green */
+    color: #ffffff; /* Font color->Dark Gray */
+    background-color: #161616;  /* Light Green */
     padding: 20px 0;
     display: flex;
     justify-content: center;
@@ -50,8 +50,8 @@
     height: auto;
     border-style: double;
     border-width: thick;
-    border-color: #000000;
-    background-color: #BDB4BF;
+    border-color: #c5c5c5;
+    background-color: #161616;
   }
   
   .inside-container{
@@ -59,14 +59,14 @@
   }
   
   .inside-container > p{
-    color: #F3F3F3;
-    background: #646464;
+    color: #c5c5c5;
+    background: transparent;
     font-size: 1.5em
   }
   
   
   .comment{
-    color: #000000;
+    color: #c5c5c5;
     padding: 20px 0;
     padding-left: 50px;
     padding-right: 50px;
