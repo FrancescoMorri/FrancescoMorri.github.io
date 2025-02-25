@@ -47,7 +47,7 @@ body {
 }
 
 .page-container {
-  color: #c5c5c5; /* Font color->Dark Gray */
+  color: #dbdbdb; /* Font color->Dark Gray */
   /*background-color: #9a83ee; /* Lighter Green */
   /*background-color: #FF1493;*/
   display: flex;
@@ -64,6 +64,7 @@ body {
   font-size: 1.5em;
   text-decoration: underline;
   background-color: #161616;
+  color: #7fcef5;
 }
 
 .snapshot {
@@ -99,7 +100,8 @@ body {
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
-  color: #30638E;
+  color: #FFD23F;
+  background-color: #555;
 }
 
 .linkini-inside:visited{

@@ -51,7 +51,7 @@ body {
 .page-container {
   /*color: #181818; /* Font color->Dark Gray */
   /*background-color: #D4EFDF; /* Lighter Green */
-  color: #c5c5c5;
+  color: #dbdbdb;
   background: transparent;
   /*background-color: #FF1493;*/
   display: flex;
@@ -67,7 +67,7 @@ body {
   background-color: #161616;
   border-style: double;
   border-width: thick;
-  width: 1200px;
+  width: 90%;
   padding: 10px;
   display: inline-block;
   flex-wrap: nowrap;
@@ -101,6 +101,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   text-decoration: underline;
+  color: #7fcef5;
 }
 
 .intro {
@@ -120,6 +121,7 @@ body {
 .Link-Intro > h2 {
   font-size: 2em;
   text-decoration: underline;
+  color: #7fcef5;
 }
 
 .linkini {
@@ -137,8 +139,9 @@ body {
 }
 
 .linkini-inside:hover, .linkini-inside:visited:hover  {
-  color: #30638E;
+  color: #7fcef5;
   font-weight: bold;
+  background: #555;
 }
 
 .linkini-inside:visited{
@@ -149,6 +152,7 @@ body {
 .pub-Intro > h2 {
   font-size: 2em;
   text-decoration: underline;
+  color: #7fcef5;
 }
 
 .pub {
@@ -165,8 +169,9 @@ body {
 }
 
 .pub-inside:hover, .pub-inside:visited:hover  {
-  color: #30638E;
+  color: #7fcef5;
   font-weight: bold;
+  background: #555;
 }
 
 .pub-inside:visited{
@@ -181,6 +186,7 @@ body {
 .Contacts-Intro > h2 {
   font-size: 2em;
   text-decoration: underline;
+  color: #7fcef5;
 }
 
 .Contacts {
@@ -197,7 +203,8 @@ body {
 }
 
 .contacts-inside:hover, .contacts-inside:visited:hover  {
-  color: #30638E;
+  color: #7fcef5;
+  background: #555;
 }
 
 .contacts-inside:visited{
@@ -217,6 +224,7 @@ body {
 .scintro > h2 {
   font-size: 2em;
   text-decoration: underline;
+  color: #7fcef5;
 }
 
 .scfooter {

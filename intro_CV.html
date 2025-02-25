@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Francesco Morri's CV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
+    <link rel="stylesheet" href="styles/style_cv.css">
+    <!--<link rel="icon" type="image/png" href="online_stuff/icon.ico"/>-->
+    <script language="javascript">
+      var favicon_images = ['online_stuff/pixil-frame-0.png',
+                            'online_stuff/pixil-frame-1.png',
+                            'online_stuff/pixil-frame-2.png',
+                            'online_stuff/pixil-frame-3.png',
+                            'online_stuff/pixil-frame-4.png',
+                            'online_stuff/pixil-frame-5.png',
+                            'online_stuff/pixil-frame-6.png',
+                            'online_stuff/pixil-frame-7.png',
+                            'online_stuff/pixil-frame-8.png',
+                            'online_stuff/pixil-frame-9.png',
+                            'online_stuff/pixil-frame-10.png',
+                            'online_stuff/pixil-frame-11.png',
+                            'online_stuff/pixil-frame-12.png',
+                            'online_stuff/pixil-frame-13.png',
+                            'online_stuff/pixil-frame-14.png',
+                            'online_stuff/pixil-frame-15.png',];
+      image_counter = 0; // To keep track of the current image
+
+      setInterval(function() {
+      // remove current favicon
+      if(document.querySelector("link[rel='icon']") !== null)
+      document.querySelector("link[rel='icon']").remove();
+      if(document.querySelector("link[rel='shortcut icon']") !== null)
+      document.querySelector("link[rel='shortcut icon']").remove();
+      
+      // add new favicon image
+      document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/png">');
+      
+      // If last image then goto first image
+      // Else go to next image    
+      if(image_counter == favicon_images.length -1)
+      image_counter = 0;
+      else
+      image_counter++;}, 200);
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  </head>
+  <body>
+
+    <div class="upper-container">
+      <div class="upper">
+        <div class="title">Francesco Morri's CV</div>
+      </div>
+    </div>
+    
+
+    <div class="page-container">
+        <div class="page">
+            <div id="sidebar" class="sidebar">
+                <ul>
+                    <li><a href="#current_position">Current Position</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#presentations">Presentations and Abstracts</a></li>
+                </ul>
+            </div>
+            <div class="big-footer">
+                <div class='footer'>
+                    <div class='column'>
+                      <div id='current_position' class='proj'><a href="#sidebar">Current Position</a></div>
+                      <div class="comment">
+                          PhD at <a class='linkini' href="https://team.inria.fr/inocs/">INRIA-LILLE</a> with the INOCS team, under the funding <em >AI_PHD@Lille</em>.
+                      </div>
+                    </div> 
+                </div>
+                <div class='footer'>
+                  <div class='column'>
+                    <div id='education' class='proj'><a href="#sidebar">Education</a></div>
+                    <div class="comment">
+                         <ul class="a">
+                          <li><h2>Università di Bologna (Oct 2017, Sep 2020)</h2> BSc in Physics </li>
+                          <li><h2>Sissa & ICTP (Sep 2020, Jan 2021)</h2> Visiting Student </li>
+                          <li><h2>Politecnico di Torino (Sep 2020, Oct 2022)</h2>MSc in Physics of Complex Systems (International Track). Final Grade: <em>110/110 cum laude</em></li>
+                          <li> <h2>Sorbonne Université (Sep 2021, Jan 2022)</h2> i-PCS Track. Final Grade: <em>16/20 (Très Bien)</em> </li>
+                          <li><h2>Spring College in Complex Systems (Feb 2021, Mar 2022)</h2> </li>
+                        </ul>
+                    </div>
+                  </div> 
+                </div>
+                  <div class='footer'>
+                    <div class='column'>
+                      <div id='experience' class='proj'><a href="#sidebar">Experience</a></div>
+                      <div class="comment">
+                        <ul class="a">
+                          <li><h2>Research Intern (IPHT, CEA Saclay) - Supervisor: Pierfrancesco Urbani (Mar 2022, Jul 2022)</h2>
+                            The project concerns the study of simple algorithms to solve continuous constraint satisfaction problems close to their satisfiability transition.
+                          </li>
+                          <li><h2>Visiting Student at Polytechnique Montréal - Supervisor: Quentin Cappart (Nov 2023)</h2>
+                            Collaboration with Quentin Cappart, working on the Citylearn Challenge 2023, as part of the Galangal project, joining together researchers from Lille, Montréal and Edinburgh.
+                          </li>
+                          <li><h2>Visiting Student at Polytechnique Montréal - Supervisor: Quentin Cappart (Jul 2024, Sep 2024)</h2>
+                            Collaboration with Quentin Cappart and Hanane Dagdougui, working on machine learning and optimization methods.
+                          </li>
+                        </ul>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class='footer'>
+                    <div class='column'>
+                      <div id='skills' class='proj'><a href="#sidebar">Skills</a></div>
+                      <div class="comment">
+                         <ul class="a">
+                          <li><h2>Programming Languages</h2> Python, C++ (Experienced) - JavaScript, Java (Familiar)</li>
+                          <li><h2>Libraries</h2> PyTorch, Matplotlib, Numpy, Pandas (Python) - ROOT, GSL (C++)</li>
+                          <li><h2>languages</h2> Italian (Native) - English (Fluent) - French (Intermediate)</li>
+                          <li><h2>Misc</h2> LaTeX, Git, Linux, Jupyter, VSCode, Markdown, HTML, CSS</li>
+                         </ul>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class='footer'>
+                    <div class='column'>
+                      <div id='publications' class='proj'><a href="#sidebar">Publications</a></div>
+                      <div class="comment">
+                        <ul class="a">
+                          <li><p><a class="linkini" href="https://doi.org/10.3233/FAIA240757" target="_blank"> Winning the 2023 CityLearn Challenge: a Community-based Hierarchical Energy Systems Coordination Algorithm </a></p>
+                            European Conference on Artificial Intelligence, 2024</li>
+                            <li><p><a class="linkini" href="https://doi.org/10.1109/EEM60825.2024.10608880" target="_blank">
+                              Learning in Stackelberg Games with Application to Strategic Bidding in the Electricity Market</a></p>
+                            International Conference on European Energy Markets, 2024</li>
+                          <li><p><a class="linkini" href="https://link.springer.com/chapter/10.1007%2F978-3-030-80209-7_97" target="_blank">
+                            On the Thermodynamic Interpretation of Deep Learning Systems</a></p>
+                            Geometric Science of Information. GSI 2021. Lecture
+                            Notes in Computer Science, vol 12829. Springer </li>
+                          
+                            
+                        </ul>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class='footer'>
+                    <div class='column'>
+                      <div id='presentations' class='proj'><a href="#sidebar">Presentations and Abstracts</a></div>
+                      <div class="comment">
+                        <ul class="a">
+                          
+                              
+                                <li><p><a class="linkini" href="https://roadef2025.org/" target="_blank">26th Congrés Annuel de la Société Francaise de Recherche Opérationelle et d'Aide à la Décision, 2025</a></p> Short submission on algorithmic learning in Stackelberg and Conjectural Games.</li>
+                                <li><p><a class="linkini" href="https://ismp2024.gerad.ca/" target="_blank"> 25th International Symposium on Mathematical Programming, 2024</a></p>
+                                  Abstract submission for learning algorithm in Stackelberg and Conjectural Games.</li>
+                                <li><p><a class="linkini" href="https://fimeschool.sciencesconf.org/?lang=en" target="_blank">
+                                  Fime Summer School on Big Data & Finance, 2023</a></p>
+                                  Presentation about MARL in energy markets.</li>
+                                <li><p><a class="linkini" href="https://www.imacs-online.eu/event/imacs-2023/" target="_blank">
+                                  21st IMACS WORLD CONGRESS, 2023</a></p>
+                                Abstract submission for learning agents in energy markets.</li>
+                                  <li><p><a class="linkini" href="https://www.lion17.org/#:~:text=The%2017th%20Learning%20and%20Intelligent%20Optimization%20(LION)%20conference%20is%20planned,participants%20is%20our%20top%20priority." target="_blank"> 17th Learning and Intelligent OptimizatioN Conference, 2023</a></p>
+                                    Abstract submission for learning agents in energy markets.</li>
+                        </ul>
+                      </div>
+                    </div> 
+                  </div>
+            </div>
+        </div>
+    </div>
+    <canvas class="background"></canvas>
+    <script>
+      window.onload = function() {
+            Particles.init({
+              selector: '.background',
+              color: '#FFD23F',
+              maxParticles: 130,
+              sizeVariations: 2,
+              minDistance: 150,
+              connectParticles: true,
+              /*responsive: [
+                {
+                  breakpoint: 768,
+                  options: {
+                    maxParticles: 80
+                  }
+                }, {
+                  breakpoint: 375,
+                  options: {
+                    maxParticles: 50
+                  }
+                }
+              ]*/
+            });
+          };
+    </script>  
+  </body>
+</html>

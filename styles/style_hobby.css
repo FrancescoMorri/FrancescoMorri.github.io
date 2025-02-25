@@ -46,7 +46,7 @@
   .page-container {
     /*color: #181818; /* Font color->Dark Gray */
     /*background-color: #D4EFDF; /* Lighter Green */
-    color: #c5c5c5;
+    color: #dbdbdb;
     /*background-color: #FF1493;*/
     display: flex;
     flex-wrap: nowrap;
@@ -58,7 +58,7 @@
     background-color: #161616;
     border-style: double;
     border-width: thick;
-    width: 1200px;
+    width: 90%;
     padding: 10px;
     display: inline-block;
     flex-wrap: nowrap;
