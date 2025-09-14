@@ -1,0 +1,54 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Atkinson Hyperlegible', -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.container { max-width: 1100px; margin: 1.25rem auto; padding: 0 1rem; }
+#contact { scroll-margin-top: 80px; }
+.profile-pic {
+  float: left;                  /* lets text wrap around */
+  width: 180px;                 /* adjust size to taste */
+  height: 180px;                /* keep it square */
+  border-radius: 50%;           /* makes it round */
+  object-fit: cover;            /* ensures proper cropping */
+  margin: 0 1rem 1rem 0;        /* space between image and text */
+  shape-outside: circle();      /* improves wrapping on modern browsers */
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px; padding: 0; margin: -1px; 
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* === Nav-like links for page content === */
+/* colors */
+:root{
+  --link:        #3a76c4;           /* soft link color */
+  --link-hover-bg: rgba(0,0,0,.06); /* same vibe as nav hover */
+  --focus-ring:  #8cb4ff66;         /* accessible focus outline */
+}
+
+/* apply to content links only (navbar is outside <main>) */
+main a:not(.project-card):not(.btn):not(.tag-chip) {
+  color: var(--link);
+  text-decoration: none;                /* nav-style (no underline) */
+  padding: .1rem .3rem;                 /* tiny pill padding */
+  border-radius: .5rem;
+  transition: background-color .15s ease, color .15s ease, box-shadow .15s ease;
+  /* multi-line links keep the rounded background on each line */
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+main a:hover:not(.project-card):not(.btn):not(.tag-chip),
+main a:focus-visible:not(.project-card):not(.btn):not(.tag-chip) {
+  background: var(--link-hover-bg);     /* the nav-like hover */
+  outline: none;
+}
+
+main a:focus-visible:not(.project-card):not(.btn):not(.tag-chip) {
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* visited stays subtle */
+main a:visited:not(.project-card):not(.btn):not(.tag-chip) {
+  filter: saturate(.9);
+}
+

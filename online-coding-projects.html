@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Coding Projects – Online</title>
+
+  <!-- Global + nav styles -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+
+  <!-- Feed styles -->
+  <link rel="stylesheet" href="styles/feed.css" />
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Online Coding Projects</h1>
+      <p class="page-sub">A stream of small tools, demos, and experiments.</p>
+    </header>
+
+    <!-- NEW: search + tag filters -->
+<section class="feed-controls" aria-label="Project filters">
+  <div class="search-row">
+    <label for="project-search" class="sr-only">Search projects</label>
+    <input id="project-search"
+           type="search"
+           placeholder="Search by title or description…"
+           autocomplete="off"
+           aria-describedby="result-count" />
+  </div>
+
+  <div class="tags-row" id="tags-row" aria-label="Filter by tag" role="list">
+    <!-- JS will render unique tag chips here -->
+  </div>
+
+  <p id="result-count" class="result-count" aria-live="polite"></p>
+</section>
+
+    <!-- The feed; JS will populate from data/projects.json -->
+    <section id="project-feed"
+             class="project-feed"
+             data-src="data/projects.json"
+             aria-live="polite">
+      <noscript>
+        <p>Please enable JavaScript to see the project feed.</p>
+      </noscript>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="scripts/nav-fetcher.js" defer></script>
+  <script src="scripts/projects-feed.js" defer></script>
+</body>
+</html>

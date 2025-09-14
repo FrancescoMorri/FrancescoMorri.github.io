@@ -1,0 +1,119 @@
+/* Keep it minimal and readable */
+.page-head { margin: 1rem 0 1.25rem; }
+.page-sub  { color: #555; }
+
+.hobby { margin: 1.5rem 0 2rem; }
+
+.hobby h2 {
+  margin: .5rem 0 .5rem;
+  font-size: 1.35rem;
+}
+
+.hobby p {
+  line-height: 1.6;
+  margin: .6rem 0;
+}
+
+/* Figures & images */
+figure { margin: 1rem 0; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+figcaption {
+  font-size: .9rem;
+  color: #666;
+  margin-top: .4rem;
+}
+
+/* Float option for a single image that wraps text */
+figure.float-right {
+  float: right;
+  width: min(320px, 40%);
+  margin: .25rem 0 1rem 1rem;
+}
+figure.float-left {
+  float: left;
+  width: min(320px, 40%);
+  margin: .25rem 1rem 1rem 0;
+}
+.clear { clear: both; }
+
+/* Simple 3-up grid for a small set of photos */
+figure.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .75rem;
+}
+figure.grid img { border-radius: 10px; }
+
+/* Make sure in-page anchor jumps don't hide under sticky nav */
+:target { scroll-margin-top: 80px; }
+
+/* Mobile tweaks */
+@media (max-width: 700px) {
+  figure.float-right,
+  figure.float-left {
+    float: none;
+    width: 100%;
+    margin: .5rem 0 1rem 0;
+  }
+}
+
+/* Space before the SoundCloud players block */
+#music .sc-list { 
+  margin-top: 1rem;      /* tweak: 0.75rem–1.25rem to taste */
+}
+
+/* If you sometimes embed a single player without .sc-list */
+#music > .sc-embed {
+  margin-top: 1rem;
+}
+
+/* (If you’re using the float layout) make sure the row starts on a new line */
+#music .sc-list { 
+  clear: both;           /* prevents wrapping around any floated images above */
+}
+
+/* Responsive SoundCloud embed */
+.sc-embed {
+  position: relative;
+  width: 100%;
+  max-width: 100px;     /* optional: keep it from stretching too wide */
+  margin: 0 auto 1rem;  /* centered */
+  aspect-ratio: 16 / 9; /* responsive height */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+.sc-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/* If you prefer the taller visual player, bump the ratio: */
+/* .sc-embed { aspect-ratio: 16 / 10; }  or even 1 / 1 for square */
+
+/* === Float-left layout when multiple players are inside .sc-list === */
+.sc-list::after { content: ""; display: table; clear: both; } /* clearfix */
+
+.sc-list .sc-embed {
+  float: left;
+  /* responsive width: min 50px, preferred ~40% of line, max 300px */
+  width: clamp(50px, 40%, 300px);
+  margin: 0 .75rem .75rem 0;   /* gap to the right/bottom */
+  max-width: none;             /* cancel the centered single-player max */
+}
+
+/* Stack nicely on small screens */
+@media (max-width: 640px) {
+  .sc-list .sc-embed {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}

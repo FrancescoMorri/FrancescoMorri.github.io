@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Your Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <title>Hobbies</title>
+
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+
+  <!-- Page-specific (tiny) styles -->
+  <link rel="stylesheet" href="/styles/hobbies.css" />
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Hobbies</h1>
+      <p class="page-sub">A few things I enjoy in my spare time.</p>
+    </header>
+
+    <!-- Example section 1 -->
+    <section class="hobby">
+      <h2>Sea</h2>
+      <p>
+        I come from a city on the coast in Italy (Rimini) so I will always love the sea. I took a scuba diving course a few years ago, but I dive less often than I would like to.
+      </p>
+
+      <figure class="grid">
+        <img src="/data/hobbies/sub.jpg" alt="Scuba diving in the Red Sea" loading="lazy">
+        <img src="/data/hobbies/puglia.jpeg" alt="Some snorkeling in Puglia" loading="lazy">
+      </figure>
+    </section>
+
+    <!-- Example section 2 -->
+    <section class="hobby">
+      <h2>Mountains</h2>
+      <p>
+        I also love (almost equally) mountains, both summer and winter. I used to climb quite often, but I enjoy almost any activity outside.
+      </p>
+
+      <figure class="grid">
+        <img src="/data/hobbies/climbing.jpeg" alt="climbing" loading="lazy">
+        <img src="/data/hobbies/ferrata.jpg" alt="ferrata" loading="lazy">
+        <img src="/data/hobbies/snowboard.jpg" alt="snowboard" loading="lazy">
+      </figure>
+      <div class="clear"></div>
+    </section>
+
+    <section class="hobby">
+      <h2>Film Photography</h2>
+      <p>
+        During a trip in Morocco I found an old (very good) film camera for an incredibly cheap price. Since then, I've been trying to learn and improve my skills in film photography. I am particularly fascinated by street photography, which is what I try to do when I have some time.
+      </p>
+
+      <figure class="grid">
+        <img src="/data/hobbies/ph_lille.jpeg" alt="lille" loading="lazy">
+        <img src="/data/hobbies/ph_paris.jpeg" alt="paris" loading="lazy">
+        <img src="/data/hobbies/ph_paris2.jpeg" alt="paris2" loading="lazy">
+        <img src="/data/hobbies/ph_rimini.jpeg" alt="rimini" loading="lazy">
+      </figure>
+    </section>
+
+    <!-- Example section 3 -->
+    <section class="hobby" id="music">
+      <h2>Music</h2>
+      <p>
+        Another hobby of mine is music. I play the guitar (quite rarely lately) and I'm learning to dj, which I see as the easiest way to play live without having a band.
+      </p>
+      <!--<figure class="float-left">
+        <img src="/data/hobbies/dj.jpeg" alt="DJing at a party" loading="lazy">
+      </figure>-->
+      I have some mixes uploaded on <a href="https://soundcloud.com/burrito_brain" target="_blank">SoundCloud</a>, here are some examples:
+      <div class="sc-list">
+        <div class="sc-embed">
+        <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1828821981&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+            title="SoundCloud track"
+            allow="autoplay"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="sc-embed">
+          <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1784818251&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+            title="SoundCloud track"
+            allow="autoplay"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="sc-embed">
+          <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1800087511&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+            title="SoundCloud track"
+            allow="autoplay"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+</body>
+</html>

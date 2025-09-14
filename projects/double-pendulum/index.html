@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <title> Double Pendulum</title>
-  </head>
-  <body>
-    <div class="upper">
-      <div class="title">Double Pendulum</div>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Double Pendulum</title>
 
-    <div class="up-container">
-      <div id="container" class="container">
-        <script src="sketch.js"></script>
-        <div id="inside-container" class="inside-container"></div>
-      </div>
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Double Pendulum</h1>
+        <p class="page-sub">Simple simulation of a double pendulum. It is made such that the lower mass traces its path on the canvas, in order to show the chaotic nature of the system.</p>
+        <p> Press SPACE to give a random push to the pendulum. With the sliders is possible to adjust the mass and the length of the two parts.</p>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
     </div>
-    <div class="comment">
-      <div class="text">Press SPACE to give a random push to the pendulum. With the sliders is possible to adjust the mass and the length of the two parts.</div>
-    </div>
-  </body>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <!-- Your project scripts: class/utility first, then sketch with setup()/draw() -->
+  <script src="boids.js"></script>  <!-- e.g., defines class boids -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
 </html>

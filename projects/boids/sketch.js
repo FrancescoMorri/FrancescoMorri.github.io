@@ -12,28 +12,19 @@ function setup() {
     flock[i] = new boids(pos, vel, 50);
   }
 
-  align_slider = createSlider(0,2,0.5,0.1);
-  align_slider.parent('inside-container')
-  align_slider.position(10,5);
-  align_slider.style('width', '50px');
-  align_label = createElement('p', 'Alignment');
-  align_label.position(align_slider.x + align_slider.width, align_slider.y);
+  align_slider = createSlider(0, 2, 0.5, 0.1);
+  align_slider.parent('inside-container');
+  align_label = createP('Alignment');
   align_label.parent('inside-container');
 
-  cohesion_slider = createSlider(0,2,1,0.1);
-  cohesion_slider.parent('inside-container')
-  cohesion_slider.position(10,25);
-  cohesion_slider.style('width', '50px');
-  cohesion_label = createElement('p', 'Cohesion');
-  cohesion_label.position(cohesion_slider.x + cohesion_slider.width, cohesion_slider.y);
+  cohesion_slider = createSlider(0, 2, 1, 0.1);
+  cohesion_slider.parent('inside-container');
+  cohesion_label = createP('Cohesion');
   cohesion_label.parent('inside-container');
 
-  avoid_slider = createSlider(0,2,0.9,0.1);
-  avoid_slider.parent('inside-container')
-  avoid_slider.position(10,45);
-  avoid_slider.style('width', '50px');
-  avoid_label = createElement('p', 'Separation');
-  avoid_label.position(avoid_slider.x + avoid_slider.width, avoid_slider.y);
+  avoid_slider = createSlider(0, 2, 0.9, 0.1);
+  avoid_slider.parent('inside-container');
+  avoid_label = createP('Separation');
   avoid_label.parent('inside-container');
 }
 

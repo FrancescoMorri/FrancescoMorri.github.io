@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Game of Life</title>
+
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Game of Life</h1>
+      <p class="page-sub">Classical implementation of Conway's Game of Life. Only difference is that the world is a toroid, so the cells wrap around when they reach the border. For a description of this system you can check the <a class="linkini-inside" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" >Wikipedia page</a>. Start by clicking inside the canvas. Then with the LEFT mouse button you can add single cells (or remove them by clicking on a filled one), while with the key '0' you can insert a random configuration. To start the simulation you then need to press the key SPACE.There are some nice configurations saved to try:</p>
+      <ul>
+        <li>Gosper glider gun KEY '1'</li>
+        <li>Simkin glider gun KEY '2'</li>
+      </ul>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
+    </div>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <!-- Your project scripts: class/utility first, then sketch with setup()/draw() -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
+</html>

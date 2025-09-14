@@ -1,0 +1,67 @@
+/* Layout */
+.cv-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.25rem;
+}
+
+/* Sticky in-page TOC */
+.cv-toc {
+  position: sticky;
+  top: 84px; /* below sticky navbar */
+  align-self: start;
+}
+.cv-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .4rem;
+}
+.cv-toc a {
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: .5rem;
+  display: block;
+}
+.cv-toc a:hover,
+.cv-toc a:focus-visible {
+  background: rgba(0,0,0,.06);
+  outline: none;
+}
+
+/* Content */
+.cv-content {
+  min-width: 0;
+}
+.cv-section { margin: 1.25rem 0 1.75rem; }
+.cv-section h2 {
+  margin: 0 0 .5rem 0;
+  font-size: 1.35rem;
+}
+.cv-list {
+  margin: .25rem 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: .75rem;
+}
+.cv-list li { line-height: 1.6; }
+.cv-list h3 {
+  margin: 0 0 .25rem 0;
+  font-size: 1.05rem;
+}
+.when {
+  font-weight: 500;
+  color: #666;
+}
+
+/* Make anchor jumps land below sticky navbar */
+:target { scroll-margin-top: 90px; }
+
+/* Small screens */
+@media (max-width: 960px) {
+  .cv-layout { grid-template-columns: 1fr; }
+  .cv-toc { position: static; }
+  .cv-toc ul { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}

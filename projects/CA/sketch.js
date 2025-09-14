@@ -17,7 +17,7 @@ function setup() {
 
   input = createInput("123456780");
   input.parent('inside-container');
-  input.position(0, height-25);
+  //input.position(0, height-25);
 
   ruleValue = int(input.value());
   ruleSet = ruleValue.toString(2).padStart(32, "0");

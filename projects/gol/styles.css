@@ -1,0 +1,32 @@
+/* A box the same size as your canvas; centered */
+.stage {
+  position: relative;
+  width: 700px;      /* match createCanvas(700, 500) */
+  height: 500px;
+  margin: 1rem auto; /* centers horizontally on the page */
+}
+
+/* Make sure the canvas fills the host */
+.canvas-host canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Controls overlay INSIDE the stage (i.e., over the canvas) */
+.controls {
+  position: absolute;
+  top: 0; left: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;              /* ensure above the canvas */
+  pointer-events: auto;
+}
+
+/* optional: style labels */
+.controls p {
+  margin: 0;
+  font-size: 0.9rem;
+}

@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <title>Self-Organizing Map</title>
-  </head>
-  <body>
-    <div class="upper">
-      <div class="title">Self-Organizing Map</div>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Self-Organizing Map</title>
 
-    <div class="up-container">
-      <div id="container" class="container">
-        <script src="sketch.js"></script>
-        <script src="neurons.js"></script>
-      </div>
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Self-Organizing Map</h1>
+      <p class="page-sub">Visualization of the learning process of a <i>self-organizing map</i> algorithm. The examples that I am drawing are mostly fun to look at, but not particularly realistic. Some more info are <a href="https://en.wikipedia.org/wiki/Self-organizing_map">here</a>. There are two configurations for now: click '1' for a spiral and '0' for a sphere.</p>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
     </div>
-    <div class="comment">
-      <div class="text">There are two configurations for now: click '1' for a spiral and '0' for a sphere.</div>
-    </div>
-  </body>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <!-- Your project scripts: class/utility first, then sketch with setup()/draw() -->
+  <script src="neurons.js"></script>  <!-- e.g., defines class boids -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
 </html>

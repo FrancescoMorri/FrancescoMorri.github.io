@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Wave Function Collapse</title>
+
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Wave Function Collapse</h1>
+      <p class="page-sub">Very basic implementation of the algorithm called <i>wave function collapse</i>. The (simplified) idea behind it is to keep in every cell every possible option that respects the rules imposed (rules between neighbours). Then when a neighbour is updated, the options no longer viable are removed. This is repeated until no more options are possible anywhere in the map. Click on the canvas to fix a pixel to a random state.</p>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
+    </div>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <script src="voxels.js"></script>  <!-- e.g., defines class voxels -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
+</html>

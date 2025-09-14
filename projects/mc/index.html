@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Infinite Terrain</title>
+
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Infinite Terrain</h1>
+      <p class="page-sub">Simple terrains generator that exploits Perlin noise. This type of generation is at the core of most endless world videogames. Click on the image and use the arrows keys to move around an infinite generated map. Moving the mouse will change the direction of the source of light.</p>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
+    </div>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <!-- Your project scripts: class/utility first, then sketch with setup()/draw() -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
+</html>

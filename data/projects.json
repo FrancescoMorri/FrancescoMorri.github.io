@@ -1,0 +1,119 @@
+[
+  {
+    "title": "Boids",
+    "description": "Boids simulation with p5.js",
+    "image": "data/projects_image/boids.png",
+    "imageAlt": "Boids preview image",
+    "link": "projects/boids/proj_index.html",
+    "tags": ["swarm", "boids", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Cellular Automata",
+    "description": "Cellular Automata simulation with p5.js",
+    "image": "data/projects_image/CA.png",
+    "imageAlt": "CA preview image",
+    "link": "projects/CA/index.html",
+    "tags": ["cellular automata", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Double Pendulum",
+    "description": "Double Pendulum simulation with p5.js",
+    "image": "data/projects_image/dp.png",
+    "imageAlt": "Duble pendulum preview image",
+    "link": "projects/double-pendulum/index.html",
+    "tags": ["physics", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Game of Life",
+    "description": "Game of Life simulation with p5.js",
+    "image": "data/projects_image/gol.png",
+    "imageAlt": "Game of Life preview image",
+    "link": "projects/gol/index.html",
+    "tags": ["cellular automata", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Gravity Patterns",
+    "description": "Gravity simulation with p5.js",
+    "image": "data/projects_image/gravity.png",
+    "imageAlt": "Gravity Patterns preview image",
+    "link": "projects/gravity/index.html",
+    "tags": ["physics", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Infinite Terrain",
+    "description": "Terrain generation with Perlin noise using p5.js",
+    "image": "data/projects_image/mc.png",
+    "imageAlt": "Infinite Terrain preview image",
+    "link": "projects/mc/index.html",
+    "tags": ["terrain", "perlin noise", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Kuramoto Boids",
+    "description": "Boids simulation with Kuramoto model using p5.js",
+    "image": "data/projects_image/kuramoto.png",
+    "imageAlt": "Kuramoto Boids preview image",
+    "link": "projects/kuramoto/index.html",
+    "tags": ["swarm", "boids", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Langton's Ant",
+    "description": "Langton's Ant simulation using p5.js",
+    "image": "data/projects_image/langton.png",
+    "imageAlt": "Langton's Ant preview image",
+    "link": "projects/langton/index.html",
+    "tags": ["cellular automata", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Maze Generator",
+    "description": "Maze generation algorithm visualization using p5.js",
+    "image": "data/projects_image/maze.png",
+    "imageAlt": "Maze Generator preview image",
+    "link": "projects/maze/index.html",
+    "tags": ["maze", "generation", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Sandpile Simulation",
+    "description": "Sandpile simulation with p5.js",
+    "image": "data/projects_image/sandpile.png",
+    "imageAlt": "Sandpile Simulation preview image",
+    "link": "projects/sandpile/index.html",
+    "tags": ["physics", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Self-Organizing Map",
+    "description": "Self-Organizing Map visualization using p5.js",
+    "image": "data/projects_image/som.png",
+    "imageAlt": "Self-Organizing Map preview image",
+    "link": "projects/som/index.html",
+    "tags": ["machine learning", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Voronoi Diagram",
+    "description": "Voronoi Diagram visualization using p5.js",
+    "image": "data/projects_image/voronoi.png",
+    "imageAlt": "Voronoi Diagram preview image",
+    "link": "projects/voronoi/index.html",
+    "tags": ["geometry", "optimization", "p5.js"],
+    "date": "14-09-2025"
+  },
+  {
+    "title": "Wave Function Collapse",
+    "description": "Wave Function Collapse algorithm visualization using p5.js",
+    "image": "data/projects_image/wfc.png",
+    "imageAlt": "Wave Function Collapse preview image",
+    "link": "projects/wfc/index.html",
+    "tags": ["optimization", "physics", "p5.js"],
+    "date": "14-09-2025"
+  }
+]

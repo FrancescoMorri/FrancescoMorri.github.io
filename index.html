@@ -1,284 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <title>Francesco Morri</title>
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/nav.css">
-  <!--<link rel="icon" type="image/png" href="online_stuff/pixil-frame-0.ico"/>-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
-  <script language="javascript">
-    var favicon_images = ['online_stuff/pixil-frame-0.png',
-      'online_stuff/pixil-frame-1.png',
-      'online_stuff/pixil-frame-2.png',
-      'online_stuff/pixil-frame-3.png',
-      'online_stuff/pixil-frame-4.png',
-      'online_stuff/pixil-frame-5.png',
-      'online_stuff/pixil-frame-6.png',
-      'online_stuff/pixil-frame-7.png',
-      'online_stuff/pixil-frame-8.png',
-      'online_stuff/pixil-frame-9.png',
-      'online_stuff/pixil-frame-10.png',
-      'online_stuff/pixil-frame-11.png',
-      'online_stuff/pixil-frame-12.png',
-      'online_stuff/pixil-frame-13.png',
-      'online_stuff/pixil-frame-14.png',
-      'online_stuff/pixil-frame-15.png',
-      'online_stuff/pixil-frame-16.png',];
-    image_counter = 0; // To keep track of the current image
-
-    setInterval(function () {
-      // remove current favicon
-      if (document.querySelector("link[rel='icon']") !== null)
-        document.querySelector("link[rel='icon']").remove();
-      if (document.querySelector("link[rel='shortcut icon']") !== null)
-        document.querySelector("link[rel='shortcut icon']").remove();
-
-      // add new favicon image
-      document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/png">');
-
-      // If last image then goto first image
-      // Else go to next image    
-      if (image_counter == favicon_images.length - 1)
-        image_counter = 0;
-      else
-        image_counter++;
-    }, 300);
-  </script>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
 </head>
-
 <body>
+  <!-- Shared navbar -->
+  <div data-include="partials/nav.html"></div>
 
-  <!--<div data-include="nav"></div>-->
-  
-
-   <div class="upper-container">
-    <div class="upper">
-      <div class="title">Francesco Morri Personal Page</div>
-    </div>
-  </div>
- 
-
-  <div class="page-container">
-    <div class="page">
-      <div class="text">
-        <div class="intro">
-          <div class="pro-pic"><img src="online_stuff/roundPic.jpeg" class="round"></div>
-          <h2> About Me </h2>
-          <p>I am currently doing a PhD at <a class="linkini-inside"
-              href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-lille" target="_blank">Inria-Lille</a>, with
-            the team INOCS, under the supervision of <a class='linkini-inside' ,
-              href="https://sites.google.com/site/helenelecadre" target="_blank">Helene Le-Cadre</a>
-            and <a class='linkini-inside' href="https://pro.univ-lille.fr/luce-brotcorne/" target="_blank">Luce
-              Brotcorne</a>. My work is focused on studying multi-agent reinforcement learning (MARL) using game theory.
-          </p>
-          <p>Previously I was enrolled in the <a class="linkini-inside" href="http://www.pcs.polito.it/"
-              target="_blank">Master of Physics of Complex System</a>, a master held by Politecnico of Torino, together
-            with SISSA and ICTP in Trieste and various universities in Paris.</p>
-          <p>I gradueted at the University of Bologna with a bachelor degree in <a class="linkini-inside"
-              href="https://corsi.unibo.it/laurea/fisica" target="_blank">Physics</a>, with a thesis on Deep Learning
-            and Thermodynamics (the link is in the lower section, for the full version you can contact me).</p>
-          <p>My main interests are Artificial Intelligence, learning algorithms and, more in general, the study of how
-            something can learn something new.</p>
-          <p>I am actually interested in models spacing also outside of the AI field, particularly when the aim is to
-            build simulation of interesting phenomena related to real world problems.</p>
-          <p>The link <a class="linkini-inside" href="intro_projects.html" target="_blank"> Interesting Stuff</a>
-            contains various simple projects that are mostly basic physical or computational systems that show unusual
-            and amusing properties, or that are just nice to look at.</p>
-          <p>Together with these nice and fun projects, I try to pursue other (usually bigger) projects. Most of the
-            time I just start something new and after some time either it happens to be less interesting than what I was
-            thinking, or I have other stuff to do (such as actually work on my PhD) and I leave them on hold.
-            <!--So in order to keep track of what I am doing I am starting to annotate various updates on the new <i>updates page</i>. Still, the probability that I will stop using that is also pretty high. 
-              I am still deciding how to keep track of what I am doing, for now I will probably try to use Twitter (if Elon does not destroy it). My timeline is below (looks very professional), but I don't guarantee I will actually post something.</p>-->
-            Anyway, most of these larger projects end up on my <a class="linkini-inside"
-              href="https://github.com/FrancescoMorri" target="_blank"> Github </a>, if they ever get finished.
-          </p>
-          <p>When I have time I also like to mix music, at the bottom of the page there are some of the mix I did
-            recently.</p>
-          <p>To jump directly at my contacts just click <a class="linkini-inside" rel="noopener"
-              href="#contacts-section">here</a>.</p>
-
-        </div>
-        <div class="Link-Intro">
-          <h2> Useful Links </h2>
-        </div>
-        <div class="linkini">
-          <ul>
-            <li>CV: <a class="linkini-inside" href="online_stuff/CV_FMorri.pdf" target="_blank">PDF</a>
-              or <a class="linkini-inside" href="intro_CV.html" target="_blank">HTML</a></li>
-            <!--<li><a class="linkini-inside" href="online_stuff/Thesis_Web_Version.pdf" target="_blank"> Bachelor Thesis</a></li>-->
-            <li><a class="linkini-inside" href="hobby.html" target="_blank"> Some hobbies </a></li>
-            <li><a class="linkini-inside" href="https://github.com/FrancescoMorri" target="_blank"> Github </a></li>
-            <li><a class="linkini-inside" href="intro_projects.html" target="_blank"> Interesting Stuff</a></li>
-            <!--<li><a class="linkini-inside" href="blog.html" target="_blank"> Updates</a></li>-->
-          </ul>
-        </div>
-
-        <div class="pub-Intro">
-          <h2> Publications (possibly incomplete, check <a class="linkini-inside"
-              href="https://scholar.google.com/citations?hl=fr&user=6bjpnMMAAAAJ&view_op=list_works&sortby=pubdate"
-              target="_blank">Google Scholar</a>) </h2>
-        </div>
-        <div class="pub">
-          <ul>
-            <li><a class="pub-inside" href="https://link.springer.com/chapter/10.1007%2F978-3-030-80209-7_97"
-                target="_blank">
-                On the Thermodynamic Interpretation of Deep Learning Systems</a></li>
-            <li><a class="pub-inside" href="https://doi.org/10.1109/EEM60825.2024.10608880" target="_blank">
-                Learning in Stackelberg Games with Application to Strategic Bidding in the Electricity Market</a></li>
-            <li><a class="pub-inside" href="https://doi.org/10.3233/FAIA240757" target="_blank">
-                Winning the 2023 CityLearn Challenge: a Community-based Hierarchical Energy Systems Coordination
-                Algorithm</a></li>
-          </ul>
-        </div>
-
-        <div class="pub-Intro">
-          <h2> Online Projects </h2>
-        </div>
-        <p><em>UPDATE:</em> everything related to scraping stuff online needs to be checked and updated a lot (more than
-          the time I have), so if it's broken it may get fixed in the future but it's not sure...</p>
-        <div class="pub">
-          <ul>
-            <li><a class="pub-inside" href="https://share.streamlit.io/francescomorri/geo-trends/main" target="_blank">
-                Geo-Trends</a>: scrape tweets around a given location and graph the most used hashtags. <em>UPDATE:</em>
-              seems like every time Twitter updates something the library does not work well, I may fix it later...</li>
-            <li><a class="pub-inside" href="https://world-happiness-report-visual.streamlit.app/" target="_blank">
-                World-Happiness</a>: explore the data of the <a class="pub-inside" href="https://worldhappiness.report/"
-                target="_blank">World Happiness Report</a>.</li>
-            <li><a class="pub-inside" href="https://huffman-visual.streamlit.app/" target="_blank">
-                Huffman-Encoding</a>: see how one of the most used compression algorithm works.</li>
-            <li><a class="pub-inside" href="https://news-classifier.streamlitapp.com/" target="_blank">News
-                Classifier</a>:
-              very proud of this project, a fine-tuned Bert classify economic news that are scraped online (better
-              description on the page). <em>UPDATE:</em> the websites I was scraping for news changed their structure,
-              so nothing work anymore :(</li>
-            <li><a class="pub-inside" href="https://arxiv-multicatchup.streamlit.app/" target="_blank">Arxiv
-                Multi-Catchup</a>: I wanted a way to have in one page multiple Arxiv categories, so I did this..</li>
-          </ul>
-        </div>
-
-
-        <div class="Contacts-Intro">
-          <h2> <a id="contacts-section"></a>Contacts </h2>
-        </div>
-        <div class="Contacts">
-          <ul>
-            <li><a class="contacts-inside" href="https://www.linkedin.com/in/francesco-morri-2ab6231b3/">
-                Linkedin</a></li>
-            <li><a class="contacts-inside" href="https://twitter.com/Burrito_Brain">Twitter</a></li>
-            <li> Mail: francesco dot morri at inria dot fr<a class="contacts-inside"> </a></li>
-            <li>
-              <div itemscope itemtype="https://schema.org/Person"><a class="contacts-inside" itemprop="sameAs"
-                  content="https://orcid.org/0000-0002-3136-8970" href="https://orcid.org/0000-0002-3136-8970"
+  <!-- Page content -->
+  <main class="container">
+    <section id="home" class="intro">
+    <img src="data/profile-pic.jpeg" alt="Francesco Morri" class="profile-pic">
+    <h1>About Me</h1>
+    <p>I am currently doing a PhD at <a href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-lille" target="_blank">Inria-Lille</a>, with the team INOCS, under the supervision of <a href="https://sites.google.com/site/helenelecadre" target="_blank">Helene Le-Cadre</a> and <a href="https://pro.univ-lille.fr/luce-brotcorne/" target="_blank">Luce Brotcorne</a>. My work is focused on studying multi-agent reinforcement learning (MARL) using game theory.</p>
+    <p>Previously I was enrolled in the <a href="http://www.pcs.polito.it/" target="_blank">Master of Physics of Complex System</a>, a master held by Politecnico of Torino, together with SISSA and ICTP in Trieste and various universities in Paris.</p>
+    <p>I graduated at the University of Bologna with a bachelor degree in <a href="https://corsi.unibo.it/laurea/fisica" target="_blank">Physics</a>, with a thesis on Deep Learning and Thermodynamics.</p>
+    <p>My main interests are Artificial Intelligence, learning algorithms and, more in general, the study of how something can learn something new.</p>
+    <p>I am actually interested in models spacing also outside of the AI field, particularly when the aim is to build simulation of interesting phenomena related to real world problems.</p>
+    </section>
+    <section id="contact" class="contact-section">
+    <h1>Contacts</h1>
+    <ul>
+        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/francesco-morri-2ab6231b3/">Linkedin</a></li>
+        <li><i class="fab fa-twitter"></i> <a href="https://twitter.com/Burrito_Brain">Twitter</a></li>
+        <li><i class="fas fa-envelope"></i> francesco dot morri at inria dot fr</li>
+        <li>
+          <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs"
+              content="https://orcid.org/0000-0002-3136-8970" href="https://orcid.org/0000-0002-3136-8970"
                   target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img
                     src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
                     style="width:1em;margin-right:.5em;" alt="ORCID iD icon" background-color:
                     #BDB4BF>https://orcid.org/0000-0002-3136-8970</a></div>
             </li>
           </ul>
-        </div>
+  </section>
+  </main>
 
-
-        <div class="scintro">
-          <h2>SoundCloud</h2>
-        </div>
-        <div class="scfooter">
-          <iframe height="auto" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1828821981&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-          <div class="scdiv"></div>
-
-          <iframe height="auto" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1784818251&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-          <div class="scdiv"></div>
-
-          <iframe height="auto" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1800087511&color=%23a2c7e5&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
-          <div class="scdiv"></div>
-        </div>
-      </div>
-
-
-
-
-
-    </div>
-
-    <!--
-      <div class="wrap">
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">  
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">  
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg">
-          <path d="m2.46177,126.39581c10.12618,-0.06577 20.25237,-0.13151 30.37857,-0.19726c0.06666,-10.3997 0.13333,-20.7994 0.19999,-31.19908c10.07782,0 20.15564,0 30.23346,0c0,-10.46351 0,-20.927 0,-31.39051c10.33589,0 20.67178,0 31.00767,0c0,-10.20827 0,-20.41656 0,-30.62485c10.20829,0 20.41656,0 30.62485,0c0,-10.20829 0,-20.41658 0,-30.62487c15.18483,0 30.36965,0 45.55448,0c0,5.10414 0,10.20829 0,15.31243c-10.08071,0 -20.16136,0 -30.24206,0c0,10.33589 0,20.67178 0,31.00769c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33589 0,20.67178 0,31.00767c-10.20829,0 -20.41656,0 -30.62485,0c0,10.33591 0,20.6718 0,31.00767c-10.33589,0 -20.67178,0 -31.00767,0c0,10.46351 0,20.927 0,31.39049c-15.31243,0 -30.62485,0 -45.93728,0c0.68263,-5.07223 -1.16374,-10.79174 0.43769,-15.68938l0,0z" stroke-width="7" fill="none"/>
-        </svg>
-        </div>
-    </div>
-  -->
-    <!--
-    <div class="footer">
-      <div class="clock"><iframe src="https://freesecure.timeanddate.com/clock/i7ez9yfl/n339/fn15/fc2a2a2a/tct/pct/ftb/tt1/tw0" frameborder="0" width="119" height="18" allowTransparency="true"></iframe>
-      </div>
-
-    </div>
-    -->
-    <canvas class="background"></canvas>
-    <script>
-      window.onload = function () {
-        Particles.init({
-          selector: '.background',
-          color: '#FFD23F',
-          maxParticles: 130,
-          sizeVariations: 2,
-          minDistance: 150,
-          connectParticles: true,
-          /*responsive: [
-            {
-              breakpoint: 768,
-              options: {
-                maxParticles: 80
-              }
-            }, {
-              breakpoint: 375,
-              options: {
-                maxParticles: 50
-              }
-            }
-          ]*/
-        });
-      };
-    </script>
-
-    <!--<script src="nav-fetcher.js"></script>-->
+  <!-- Scripts -->
+  <script src="scripts/nav-fetcher.js" defer></script>
 </body>
-
 </html>

@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <title>Voronoi Tessellation</title>
-  </head>
-  <body>
-    <div class="upper">
-      <div class="title">Voronoi Tessellation</div>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Voronoi Diagram</title>
 
-    <div class="up-container">
-      <div id="container" class="container">
-        <script src="sketch.js"></script>
-      </div>
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Voronoi Diagram</h1>
+      <p class="page-sub">Algorithm used for the tessellation of space. The idea is to find the area around a given points such that all the points inside this area are closer to him than to any other point present on the surface. For a deeper explanation of efficients algorithms (which I did not followed), you can check the <a href="https://en.wikipedia.org/wiki/Voronoi_diagram" >Wikipedia page</a>. Click inside the canvas to add more points.</p>
+    </header>
+
+    <!-- Project shell -->
+    <div class="stage">
+      <!-- p5 will insert the <canvas> inside this host -->
+      <div id="container" class="canvas-host"></div>
+
+      <!-- Your sliders/labels live here, over the canvas -->
+      <div id="inside-container" class="controls"></div>
     </div>
-    <div class="comment">
-      <div class="text">Click inside the canvas to add more points.</div>
-    </div>
-  </body>
+  </main>
+
+  <!-- Include loader for the navbar -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- p5.js (must be before your sketch) -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+  <!-- Your project scripts: class/utility first, then sketch with setup()/draw() -->
+  <script src="sketch.js"></script>        <!-- contains your setup() with createCanvas etc. -->
+</body>
 </html>
