@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Font + global styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="/projects/saddle/style.css">
+
+  <title>Saddle Game Simulator</title>
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Saddle Game Dynamics</h1>
+      <p class="page-sub">Interactive demo of xy saddle-point dynamics with multiple update rules.</p>
+    </header>
+
+    <!-- Simulator -->
+    <section class="sim">
+      <div class="sim-grid">
+        <canvas id="cv" width="600" height="600" title="Click to set start"></canvas>
+
+        <div class="ctrl">
+          <div class="btns">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="step">Step</button>
+            <button id="reset">Reset</button>
+          </div>
+
+          <label>Method:
+            <select id="method">
+              <option value="naive">Naïve GD/GA</option>
+              <option value="extragradient">Extragradient</option>
+              <option value="lola">LOLA (opponent-aware)</option>
+              <option value="conjectures">Conjectures</option>
+            </select>
+          </label>
+
+          <label>Step size η: <span id="etaVal" class="mono">0.150</span></label>
+          <input id="eta" type="range" min="0.001" max="0.5" step="0.001" value="0.150">
+
+          <label>Speed (iters per frame): <span id="spdVal" class="mono">3</span></label>
+          <input id="speed" type="range" min="1" max="20" step="1" value="3">
+
+          <label>Iterations: <span id="iter" class="mono">0</span></label>
+          <label>Point (x,y): <span id="xy" class="mono">1.000, -0.600</span></label>
+          <label>Distance to NE: <span id="dist" class="mono">1.166</span></label>
+          <label>Start (x₀,y₀): <span id="xy0" class="mono">1.00, -0.60</span></label>
+
+          <p class="note">
+            f(x,y)=x·y. Red cross = NE (0,0). Blue circle = start. Black dot = current point.<br>
+            Click the canvas to choose a new starting point.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared nav loader -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+
+  <!-- Page script -->
+  <script src="/projects/saddle/saddle.js" defer></script>
+</body>
+</html>

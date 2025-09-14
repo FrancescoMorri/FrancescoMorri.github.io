@@ -115,5 +115,14 @@
     "link": "projects/wfc/index.html",
     "tags": ["optimization", "physics", "p5.js"],
     "date": "14-09-2025"
+  },
+  {
+    "title": "Saddle Game Simulator",
+    "description": "Simple simulation of different algorithms for a continuous saddle game",
+    "image": "data/projects_image/saddle.png",
+    "imageAlt": "Saddle preview image",
+    "link": "projects/saddle/index.html",
+    "tags": ["game-theory", "optimization"],
+    "date": "14-09-2025"
   }
 ]

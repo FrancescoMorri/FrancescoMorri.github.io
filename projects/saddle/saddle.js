@@ -1,56 +1,4 @@
-<!doctype html>
-<meta charset="utf-8" />
-<title>Saddle Game Dynamics: xy</title>
-<style>
-  body { font: 14px/1.4 system-ui, sans-serif; margin: 16px; }
-  #row { display: grid; grid-template-columns: 620px 1fr; gap: 16px; align-items: start; }
-  canvas { border: 1px solid #ccc; background: #fafafa; }
-  .ctrl label { display:block; margin: 8px 0 2px; }
-  .ctrl input[type=range]{ width: 260px; }
-  button { margin: 4px 4px 4px 0; }
-  .note { color:#555; margin-top:8px; }
-  select { margin-left: 6px; }
-  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-</style>
-
-<div id="row">
-  <canvas id="cv" width="600" height="600" title="Click to set start"></canvas>
-  <div class="ctrl">
-    <div>
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="step">Step</button>
-      <button id="reset">Reset</button>
-    </div>
-
-    <label>Method:
-      <select id="method">
-        <option value="naive">Naïve GD/GA</option>
-        <option value="extragradient">Extragradient</option>
-        <option value="lola">LOLA (opponent-aware)</option>
-        <option value="conjectures">Conjectures</option>
-      </select>
-    </label>
-
-    <label>Step size η: <span id="etaVal" class="mono">0.150</span></label>
-    <input id="eta" type="range" min="0.001" max="0.5" step="0.001" value="0.150">
-
-    <label>Speed (iters per frame): <span id="spdVal" class="mono">3</span></label>
-    <input id="speed" type="range" min="1" max="20" step="1" value="3">
-
-    <label>Iterations: <span id="iter" class="mono">0</span></label>
-    <label>Point (x,y): <span id="xy" class="mono">1.000, -0.600</span></label>
-    <label>Distance to NE: <span id="dist" class="mono">1.166</span></label>
-    <label>Start (x₀,y₀): <span id="xy0" class="mono">1.00, -0.60</span></label>
-
-    <div class="note">
-      f(x,y)=x·y. Red cross = NE (0,0). Blue circle = start. Black dot = current point.<br>
-      Click the canvas to choose a new starting point.
-    </div>
-  </div>
-</div>
-
-<script>
+// Your original simulator logic, wrapped and loaded with defer
 (() => {
   // ----- World <-> Screen -----
   const W = 600, H = 600;
@@ -123,8 +71,6 @@
 
   function step_conjectural(){
     // Player 1 follows ∇(-x^2) ; Player 2 follows ∇(-y^2)
-    // Minimizer uses descent, maximizer uses ascent (as specified):
-    // x <- x - η(-2x) = x + 2ηx ; y <- y + η(-2y) = y - 2ηy
     const xn = x - 2*eta*x;
     const yn = y - 2*eta*y;
     x = xn; y = yn;
@@ -262,4 +208,3 @@
   updateDisplays();
   render();
 })();
-</script>
