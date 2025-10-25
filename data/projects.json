@@ -124,5 +124,23 @@
     "link": "projects/saddle/index.html",
     "tags": ["game-theory", "optimization"],
     "date": "14-09-2025"
+  },
+  {
+    "title": "Marching Cube Simulation",
+    "description": "Graphic simulation using the marching cubes algorithm",
+    "image": "data/projects_image/marching.png",
+    "imageAlt": "Marching preview image",
+    "link": "projects/marching/index.html",
+    "tags": ["p5.js", "graphics"],
+    "date": "24-10-2025"
+  },
+  {
+    "title": "Daily News Scraper",
+    "description": "Web scraper for daily news articles",
+    "image": "data/projects_image/dailynews.png",
+    "imageAlt": "Daily News Scraper preview image",
+    "link": "https://dailynewsscrape.streamlit.app/",
+    "tags": ["web scraping", "news", "python"],
+    "date": "14-09-2025"
   }
 ]
