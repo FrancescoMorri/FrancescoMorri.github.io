@@ -136,7 +136,7 @@
   },
   {
     "title": "Daily News Scraper",
-    "description": "Web scraper for daily news articles",
+    "description": "Web scraper for daily economic news title, with a bit of analysis using NLP",
     "image": "data/projects_image/dailynews.png",
     "imageAlt": "Daily News Scraper preview image",
     "link": "https://dailynewsscrape.streamlit.app/",
