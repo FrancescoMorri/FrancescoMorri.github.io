@@ -1,0 +1,27 @@
+name: Update AoC Badges
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # updates once per hour
+  workflow_dispatch:
+
+jobs:
+  badges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update badges
+        uses: J0B10/aoc-badges-action@v2
+        with:
+          session: ${{ secrets.AOC_SESSION }}
+          year: 2024
+          outputDir: badges
+
+      - name: Commit badges
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add badges
+          git commit -m "Update AoC badges" || echo "No changes to commit"
+          git push
