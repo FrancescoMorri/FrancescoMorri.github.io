@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Update badges
-        uses: J0B10/aoc-badges-action@v1
+        uses: J0B10/aoc-badges-action@main
         with:
           session: ${{ secrets.AOC_SESSION }}
           year: 2025
