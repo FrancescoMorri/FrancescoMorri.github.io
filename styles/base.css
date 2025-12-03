@@ -52,3 +52,41 @@ main a:visited:not(.project-card):not(.btn):not(.tag-chip) {
   filter: saturate(.9);
 }
 
+
+/* Layout: contacts and news side-by-side */
+.contact-section, .news-section {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  box-sizing: border-box;
+}
+
+/* Push News to the right */
+.news-section {
+  text-align: left;
+  margin-left: 2%;
+}
+
+/* Scrollable box */
+.news-container {
+  max-height: 300px;      /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 10px;
+  border-left: 2px solid #ddd;
+  padding-left: 15px;
+}
+
+/* Style each news entry */
+.news-item {
+  margin-bottom: 1em;
+}
+
+.news-date {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.news-text {
+  margin: 0.3em 0 0 0;
+}
+
