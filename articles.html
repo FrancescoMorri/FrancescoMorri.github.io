@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Your Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <title>Articles</title>
+  <link rel="icon" href="data/favicon.png" type="image/png">
+
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="/styles/base.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+
+
+  <!-- Page-specific (tiny) styles -->
+  <link rel="stylesheet" href="/styles/articles.css" />
+</head>
+<body>
+  <!-- Shared navbar -->
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Articles</h1>
+      <p class="page-sub">A (more or less up to date) list of my articles. Generally <a href="https://scholar.google.com/citations?hl=fr&user=6bjpnMMAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a> is the most reliable source.</p>
+    </header>
+
+
+  <section class="articles-controls" aria-label="Articles controls">
+    <label class="articles-search">
+      <span class="sr-only">Search articles</span>
+      <input id="articlesSearch" type="search" placeholder="Search by title, author, abstract..." autocomplete="off" />
+    </label>
+
+    <label class="articles-filter">
+      <span class="sr-only">Filter by publication type</span>
+      <select id="articlesType">
+        <option value="all">All types</option>
+        <option value="conf">Conference</option>
+        <option value="journal">Journal</option>
+        <option value="pre-print">Pre-print</option>
+      </select>
+    </label>
+
+    <label class="articles-sort">
+      <span class="sr-only">Sort by date</span>
+      <select id="articlesSort">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+      </select>
+    </label>
+  </section>
+
+  <section id="articlesList" class="articles-list" aria-live="polite">
+    <!-- JS will inject cards here -->
+  </section>
+
+  <!-- Title element inside the template is a link -->
+<template id="articleCardTemplate">
+  <article class="article-card">
+    <div class="article-card__top">
+      <h2 class="article-card__title">
+        <a class="article-card__title-link" href="" target="_blank" rel="noopener noreferrer"></a>
+      </h2>
+      <span class="article-card__badge" data-type=""></span>
+    </div>
+
+    <div class="article-card__meta">
+      <span class="article-card__authors"></span>
+      <span class="article-card__dot" aria-hidden="true">•</span>
+      <span class="article-card__venue"></span>
+      <span class="article-card__dot" aria-hidden="true">•</span>
+      <time class="article-card__date"></time>
+    </div>
+
+    <details class="article-card__details">
+      <summary class="article-card__summary">Abstract</summary>
+      <p class="article-card__abstract"></p>
+    </details>
+  </article>
+</template>
+
+
+  <div id="articlesEmpty" class="articles-empty" hidden>
+    No articles match your search.
+  </div>
+
+  <div id="articlesError" class="articles-error" hidden>
+    Could not load articles data.
+  </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/scripts/nav-fetcher.js" defer></script>
+  <script src="/scripts/articles-fetcher.js" defer></script>
+</body>
+</html>

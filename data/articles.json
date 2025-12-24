@@ -1,0 +1,54 @@
+[
+  {
+    "title": "On the thermodynamic interpretation of deep learning systems",
+    "authors": "R. Fioresi, F. Faglioni, F. Morri, L. Squadrani",
+    "date": "2021",
+    "publication type": "conf",
+    "venue": "International Conference on Geometric Science of Information",
+    "link":"https://link.springer.com/chapter/10.1007/978-3-030-80209-7_97",
+    "abstract": "In the study of time evolution of the parameters in Deep Learning systems, subject to optimization via SGD (stochastic gradient descent), temperature, entropy and other thermodynamic notions are commonly employed to exploit the Boltzmann formalism. We show that, in simulations on popular databases (CIFAR10, MNIST), such simplified models appear inadequate: different regions in the parameter space exhibit significantly different temperatures and no elementary function expresses the temperature in terms of learning rate and batch size, as commonly assumed. This suggests a more conceptual approach involving contact dynamics and Lie Group Thermodynamics."
+  },
+  {
+    "title": "Steering Noncooperative Games Through Conjecture Design",
+    "authors": "F. Morri, H. L. Cadre, D. Salas, D. Aussel",
+    "date": "2025",
+    "publication type": "pre-print",
+    "link":"https://arxiv.org/abs/2511.09435",
+    "abstract": "In dynamic noncooperative games, each player makes conjectures about other players' reactions before choosing a strategy. However, resulting equilibria may be multiple and do not always lead to desirable outcomes. These issues are typically addressed separately, for example, through opponent modelling and incentive design. Drawing inspiration from conjectural variations games, we propose an incentive design framework in which a coordinator first computes an equilibrium by optimizing a predefined objective function, then communicates this equilibrium as a target for the players to reach. In a centralized setting, the coordinator also optimizes the conjectures to steer the players towards the target. In decentralized settings, players independently compute conjectures and update their strategies based on individual targets. We provide a guarantee of equilibrium existence in both cases. This framework uses conjectures not only to guide the system towards desirable outcomes but also to decouple the game into independent optimization problems, enabling efficient computation and parallelization in large-scale settings. We illustrate our theoretical results on classical representative noncooperative games, demonstrating its application potential."
+  },
+  {
+    "title": "Game Theory and Multi-Agent Reinforcement Learning for Zonal Ancillary Markets",
+    "authors": "F. Morri, H. L. Cadre, P. Gruet, L. Brotcorne",
+    "date": "2025",
+    "publication type": "pre-print",
+    "link":"https://arxiv.org/abs/2505.03288",
+    "abstract": "We characterize zonal ancillary market coupling relying on noncooperative game theory. To that purpose, we formulate the ancillary market as a multi-leader single follower bilevel problem, that we subsequently cast as a generalized Nash game with side constraints and nonconvex feasibility sets. We determine conditions for equilibrium existence and show that the game has a generalized potential game structure. To compute market equilibrium, we rely on two exact approaches: an integrated optimization approach and Gauss-Seidel best-response, that we compare against multi-agent deep reinforcement learning. On real data from Germany and Austria, simulations indicate that multi-agent deep reinforcement learning achieves the smallest convergence rate but requires pretraining, while bestresponse is the slowest. On the economics side, multi-agent deep reinforcement learning results in smaller market costs compared to the exact methods, but at the cost of higher variability in the profit allocation among stakeholders. Further, stronger coupling between zones tends to reduce costs for larger zones."
+  },
+  {
+    "title": "Learning in Conjectural Stackelberg Games",
+    "authors": "F. Morri, H. L. Cadre, L. Brotcorne",
+    "date": "2025",
+    "publication type": "conf",
+    "venue": "Games, Agents and Incentives Workshops at AAMAS 2025",
+    "link":"https://arxiv.org/pdf/2501.13686",
+    "abstract": "We extend the formalism of Conjectural Variations games to Stackelberg games involving multiple leaders and a single follower. To solve these nonconvex games, a common assumption is that the leaders compute their strategies having perfect knowledge of the follower's best response. However, in practice, the leaders may have little to no knowledge about the other players' reactions. To deal with this lack of knowledge, we assume that each leader can form conjectures about the other players' best responses, and update its strategy relying on these conjectures. Our contributions are twofold: (i) On the theoretical side, we introduce the concept of Conjectural Stackelberg Equilibrium -- keeping our formalism conjecture agnostic -- with Stackelberg Equilibrium being a refinement of it. (ii) On the algorithmic side, we introduce a two-stage algorithm with guarantees of convergence, which allows the leaders to first learn conjectures on a training data set, and then update their strategies. Theoretical results are illustrated numerically."
+  },
+  {
+    "title": "Winning the 2023 CityLearn challenge: A community-based hierarchical energy systems coordination algorithm",
+    "authors": "A. I. Garmendia, F. Morri, Q. Cappart, H. L. Cadre",
+    "date": "2024",
+    "publication type": "conf",
+    "venue": "2024 European Conference on Artificial Intelligence",
+    "link":"https://ebooks.iospress.nl/doi/10.3233/FAIA240757",
+    "abstract": "The effective management and control of building energy systems are crucial for reducing the energy consumption peak loads, CO2 emissions, and ensuring the stability of the power grid, while maintaining optimal comfort levels within buildings. The difficulty to accommodate this trade-off is amplified by dynamic environmental conditions and the need for scalable solutions that can adapt across various building types and geographic locations. Acknowledging the importance of this problem, NeurIPS conference hosted since 2020 the CityLearn control challenge to foster the design of innovative solutions in building energy management. Participants were tasked with developing strategies that not only enhance energy efficiency but also prioritize sustainability and occupant comfort. This paper introduces the Community-based Hierarchical Energy Systems Coordination Algorithm (CHESCA), the winning approach of the 2023 edition. We rely on a hierarchical approach adaptable to an arbitrary number of buildings, first optimizing building-level metrics individually, and later refining these through a central community-level controller to improve grid-related metrics. Compared to the other high-ranked competitors, our approach demonstrated fast inference capabilities like learning-based methods, while offering a better interpretability and a superior generalization capabilities with minimal data requirements. This paper details our approach, supported by comprehensive experimental results and ablation studies."
+  },
+  {
+    "title": "Learning in Stackelberg Games with Application to Strategic Bidding in the Electricity Market",
+    "authors": "F. Morri, H. L. Cadre, P. Gruet, L. Brotcorne",
+    "date": "2024",
+    "publication type": "conf",
+    "venue": "2024 International Conference on the European Energy Market",
+    "link":"https://ieeexplore.ieee.org/abstract/document/10608880",
+    "abstract": "We formulate a two-stage electricity market involving conventional and renewable producers strategically bidding in the day-ahead market to maximize their profits, while anticipating the market clearing performed by an Independent System Operator (ISO), as a multi-leader single follower Stackelberg game. In this game, producers are interpreted as leaders, while the ISO acts as a follower. To compute an equilibrium, the classical approach is to cast the Stackelberg game as a Generalized Nash Game (GNG), replacing the ISO's optimization problem by its KKT constraints. To solve this reformulated problem, we can either rely on the Gauss-Seidel Best-Response method (GS-BR), or, on the Alternating Direction Method of Multipliers (ADMM). However, both approaches are implemented in a centralized setting since they require the existence of a coordinator which keeps track of the history of agents' strategies and sequential updates, or, is responsible for the Lagrange multiplier updates following the augmented Lagrangian. To allow the agents to selfishly optimize their utility functions in a decentralized setting, we introduce a variant of an actor-critic Multi-Agent Deep Reinforcement Learning (MARL) algorithm with provable convergence. Our algorithm is innovative in that it allows different levels of coordination among the actors and the critic, thus capturing different information structures of the Stackelberg game. We conclude this work by comparing GS-BR and ADMM, both used as benchmark, to the MARL, on a dataset from the French electricity market, relying on metrics such as the efficiency loss and the accuracy of the solution."
+  }
+]
