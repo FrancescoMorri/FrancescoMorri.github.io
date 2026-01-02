@@ -116,6 +116,13 @@
   margin-top: 10px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 10px;
+  position: relative;
+  z-index: 0;
+}
+
+.article-card__top {
+  position: relative;
+  z-index: 2;
 }
 
 .article-card__summary {

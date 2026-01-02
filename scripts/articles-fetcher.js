@@ -1,12 +1,9 @@
 // ===== File: /js/articles.js =====
-// Expects a JSON file in /data/articles.json
-// Each entry: { title, authors, date, "publication type", abstract }
-// Notes:
-// - "publication type" contains a space, so we read it via bracket notation.
-// - date should be parseable by Date (recommended: YYYY-MM-DD).
+// Loads /data/articles.json (array of objects)
+// Required fields: title, authors, date (year), "publication type", abstract, link, venue
 
 (() => {
-  const DATA_URL = "data/articles.json"; // adjust if your path differs
+  const DATA_URL = "data/articles.json";
 
   const listEl = document.getElementById("articlesList");
   const emptyEl = document.getElementById("articlesEmpty");
@@ -17,13 +14,14 @@
   const sortEl = document.getElementById("articlesSort");
 
   const tpl = document.getElementById("articleCardTemplate");
-
   if (!listEl || !tpl) return;
 
   let allArticles = [];
 
+  const safeText = (v) => (v ?? "").toString().trim();
+
   function normalizeType(t) {
-    const v = String(t || "").trim().toLowerCase();
+    const v = safeText(t).toLowerCase();
     if (v === "conference" || v === "conf") return "conf";
     if (v === "journal") return "journal";
     if (v === "preprint" || v === "pre-print" || v === "pre print") return "pre-print";
@@ -39,48 +37,32 @@
       case "pre-print":
         return "PRE-PRINT";
       default:
-        return type.toUpperCase();
+        return (type || "OTHER").toUpperCase();
     }
   }
 
-  // function normalizeHref(raw) {
-  //     const s = (raw ?? "").toString().trim();
-  //     if (!s) return "";
-
-  //     // Already absolute
-  //     if (/^https?:\/\//i.test(s)) return s;
-
-  //     // Protocol-relative
-  //     if (/^\/\//.test(s)) return `https:${s}`;
-
-  //     // Common case: "www.example.com/..."
-  //     if (/^www\./i.test(s)) return `https://${s}`;
-
-  //     // Otherwise treat as relative (keeps support for local PDFs if you ever mix them)
-  //     return new URL(s, window.location.href).href;
-  //   }
-
-  function safeText(v) {
-    return (v ?? "").toString().trim();
+  function normalizeHref(raw) {
+    const s = safeText(raw);
+    if (!s) return "";
+    if (/^https?:\/\//i.test(s)) return s;
+    if (/^\/\//.test(s)) return `https:${s}`;
+    if (/^www\./i.test(s)) return `https://${s}`;
+    // If you ever use relative links, this will still work:
+    return new URL(s, window.location.href).href;
   }
 
   function parseYear(y) {
-    const year = parseInt(y, 10);
+    const year = parseInt(safeText(y), 10);
     return Number.isFinite(year) ? year : null;
   }
 
   function matchesSearch(a, q) {
     if (!q) return true;
-    const hay = [
-      a.title,
-      a.authors,
-      a.abstract,
-      a.publicationType,
-      a.dateRaw
-    ]
+    const qq = q.toLowerCase();
+    const hay = [a.title, a.authors, a.abstract, a.publicationType, a.venue, a.link, a.yearRaw]
       .join(" ")
       .toLowerCase();
-    return hay.includes(q.toLowerCase());
+    return hay.includes(qq);
   }
 
   function matchesType(a, selected) {
@@ -88,18 +70,6 @@
     return a.publicationType === selected;
   }
 
-  // function sortByDate(items, mode) {
-  //   const dir = mode === "oldest" ? 1 : -1;
-  //   return [...items].sort((x, y) => {
-  //     const dx = x.dateObj ? x.dateObj.getTime() : -Infinity;
-  //     const dy = y.dateObj ? y.dateObj.getTime() : -Infinity;
-  //     // If one date is invalid, push it to bottom
-  //     if (!x.dateObj && y.dateObj) return 1;
-  //     if (x.dateObj && !y.dateObj) return -1;
-  //     if (!x.dateObj && !y.dateObj) return 0;
-  //     return (dx - dy) * dir;
-  //   });
-  // }
   function sortByYear(items, mode) {
     const dir = mode === "oldest" ? 1 : -1;
     return [...items].sort((a, b) => {
@@ -131,34 +101,38 @@
       const titleLinkEl = node.querySelector(".article-card__title-link");
       const badgeEl = node.querySelector(".article-card__badge");
       const authorsEl = node.querySelector(".article-card__authors");
+      const venueEl = node.querySelector(".article-card__venue");
       const timeEl = node.querySelector(".article-card__date");
       const abstractEl = node.querySelector(".article-card__abstract");
-      const venueEl = node.querySelector(".article-card__venue");
 
-      if (!titleLinkEl) {
-          console.error("Title link element not found in template");
+      // Title + Link
+      if (titleLinkEl) {
+        titleLinkEl.textContent = a.title || "Untitled";
+
+        const href = normalizeHref(a.link);
+        if (href) {
+          titleLinkEl.setAttribute("href", href); // setAttribute avoids some odd edge cases
+          titleLinkEl.target = "_blank";
+          titleLinkEl.rel = "noopener noreferrer";
+          titleLinkEl.removeAttribute("aria-disabled");
+          titleLinkEl.tabIndex = 0;
         } else {
-          titleLinkEl.textContent = a.title || "Untitled";
-        
-          const raw = (a.link ?? "").toString().trim();
-          if (raw) {
-            titleLinkEl.href = raw.startsWith("http")
-              ? raw
-              : `https://${raw}`;
-          } else {
-            titleLinkEl.removeAttribute("href");
-          }
+          titleLinkEl.removeAttribute("href");
+          titleLinkEl.setAttribute("aria-disabled", "true");
+          titleLinkEl.tabIndex = -1;
         }
+      }
+
+      // Badge
       if (badgeEl) {
         badgeEl.textContent = typeLabel(a.publicationType);
         badgeEl.dataset.type = a.publicationType;
       }
+
+      // Authors
       if (authorsEl) authorsEl.textContent = a.authors || "";
-      if (timeEl) {
-        timeEl.textContent = a.dateDisplay || "";
-        if (a.dateObj) timeEl.dateTime = a.dateObj.toISOString().slice(0, 10);
-      }
-      if (abstractEl) abstractEl.textContent = a.abstract || "";
+
+      // Venue
       if (venueEl) {
         if (a.venue) {
           venueEl.textContent = a.venue;
@@ -168,14 +142,15 @@
           venueEl.style.display = "none";
         }
       }
+
+      // Year
       if (timeEl) {
-        if (a.year) {
-          timeEl.textContent = a.year;
-          timeEl.removeAttribute("datetime");
-        } else {
-          timeEl.textContent = "";
-        }
+        timeEl.textContent = a.year ? String(a.year) : "";
+        timeEl.removeAttribute("datetime");
       }
+
+      // Abstract
+      if (abstractEl) abstractEl.textContent = a.abstract || "";
 
       frag.appendChild(node);
     }
@@ -201,33 +176,31 @@
     try {
       const res = await fetch(DATA_URL, { cache: "no-store" });
       if (!res.ok) throw new Error(`Failed to fetch ${DATA_URL} (${res.status})`);
-      const raw = await res.json();
 
+      const raw = await res.json();
       if (!Array.isArray(raw)) throw new Error("articles.json must be an array");
 
       allArticles = raw.map((x) => {
         const publicationType = normalizeType(x["publication type"] ?? x.publicationType ?? x.type);
-        const yearRaw = (x.date ?? "").toString().trim();
-        const year = parseYear(yearRaw);
+        const yearRaw = safeText(x.date);
 
         return {
           title: safeText(x.title),
           authors: safeText(x.authors),
           abstract: safeText(x.abstract ?? x.abstratc),
           publicationType,
-          venue: (x.venue ?? "").toString().trim(),
+          venue: safeText(x.venue),
+          link: safeText(x.link ?? x.url), // supports either key
           yearRaw,
-          year
+          year: parseYear(yearRaw),
         };
-
       });
 
       applyAndRender();
 
-      // Hook up controls
-      if (searchEl) searchEl.addEventListener("input", applyAndRender);
-      if (typeEl) typeEl.addEventListener("change", applyAndRender);
-      if (sortEl) sortEl.addEventListener("change", applyAndRender);
+      searchEl?.addEventListener("input", applyAndRender);
+      typeEl?.addEventListener("change", applyAndRender);
+      sortEl?.addEventListener("change", applyAndRender);
     } catch (e) {
       console.error(e);
       clearList();
