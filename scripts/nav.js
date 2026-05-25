@@ -50,25 +50,28 @@
     }
   });
 
-  // Mark current page (handles index.html#contact)
+  // Mark current page.
 try {
-  const path = location.pathname.split('/').pop() || 'index.html';
-  const hash = location.hash.replace('#', '');
-  // Clear any previous
+  const currentFile = location.pathname.split('/').pop() || 'index.html';
+
   document.querySelectorAll('.links a[aria-current="page"]')
     .forEach(a => a.removeAttribute('aria-current'));
 
-  if (path === '' || path === 'index.html') {
-    if (hash === 'contact') {
-      const a = document.querySelector('.links a[href="index.html#contact"]');
-      if (a) a.setAttribute('aria-current', 'page');
-    } else {
-      const a = document.querySelector('.links a[href="index.html"]');
-      if (a) a.setAttribute('aria-current', 'page');
+  document.querySelectorAll('.links a[href]').forEach((a) => {
+    const href = a.getAttribute('href');
+    if (!href || /^https?:\/\//i.test(href)) return;
+
+    const linkFile = href.split('#')[0].split('?')[0].split('/').pop() || 'index.html';
+    if (linkFile === currentFile) a.setAttribute('aria-current', 'page');
+  });
+
+  if (currentFile === 'blog-post.html') {
+    const blogLink = document.querySelector('.links a[href$="/blog.html"], .links a[href="blog.html"]');
+    if (blogLink) {
+      document.querySelectorAll('.links a[aria-current="page"]')
+        .forEach(a => a.removeAttribute('aria-current'));
+      blogLink.setAttribute('aria-current', 'page');
     }
-  } else {
-    const a = document.querySelector(`.links a[href="${path}"]`);
-    if (a) a.setAttribute('aria-current', 'page');
   }
 } catch {}
 

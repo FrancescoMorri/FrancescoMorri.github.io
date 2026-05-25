@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Blog Post</title>
+  <link rel="icon" href="data/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/blog.css" />
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]]
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+</head>
+<body>
+  <div data-include="partials/nav.html"></div>
+
+  <main class="container">
+    <article class="blog-post">
+      <nav class="blog-back" aria-label="Blog navigation">
+        <a href="blog.html">Back to blog</a>
+      </nav>
+
+      <header class="blog-post__head">
+        <h1 id="postTitle">Blog Post</h1>
+        <p class="blog-post__summary" id="postSummary"></p>
+        <div class="blog-post__meta">
+          <time id="postDate"></time>
+          <span id="postTags" class="blog-post__tags"></span>
+        </div>
+      </header>
+
+      <div id="postContent" class="blog-post__content" aria-live="polite">
+        <p>Loading post...</p>
+      </div>
+
+      <div id="postError" class="blog-message" hidden>
+        Could not load this post.
+      </div>
+    </article>
+  </main>
+
+  <script src="scripts/nav-fetcher.js" defer></script>
+  <script src="scripts/blog-post.js" defer></script>
+</body>
+</html>

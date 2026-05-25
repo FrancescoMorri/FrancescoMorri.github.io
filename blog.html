@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Blog</title>
+  <link rel="icon" href="data/favicon.png" type="image/png">
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/blog.css" />
+</head>
+<body>
+  <div data-include="partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Blog</h1>
+      <p class="page-sub">Notes, ideas, and small technical write-ups.</p>
+    </header>
+
+    <section class="blog-controls" aria-label="Blog filters">
+      <label class="blog-search">
+        <span class="sr-only">Search blog posts</span>
+        <input id="blogSearch" type="search" placeholder="Search posts..." autocomplete="off" aria-describedby="blogResultCount" />
+      </label>
+
+      <label class="blog-sort">
+        <span class="sr-only">Sort posts</span>
+        <select id="blogSort">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="blog-tags" id="blogTags" aria-label="Filter by tag" role="list"></section>
+    <p id="blogResultCount" class="blog-result-count" aria-live="polite"></p>
+
+    <section id="blogList" class="blog-list" aria-live="polite">
+      <noscript>
+        <p>Please enable JavaScript to see the blog posts.</p>
+      </noscript>
+    </section>
+
+    <template id="blogCardTemplate">
+      <article class="blog-card">
+        <a class="blog-card__link" href="">
+          <div class="blog-card__body">
+            <h2 class="blog-card__title"></h2>
+            <p class="blog-card__summary"></p>
+          </div>
+          <footer class="blog-card__meta">
+            <time class="blog-card__date"></time>
+            <span class="blog-card__tags"></span>
+          </footer>
+        </a>
+      </article>
+    </template>
+
+    <div id="blogEmpty" class="blog-message" hidden>
+      No blog posts match your search.
+    </div>
+
+    <div id="blogError" class="blog-message" hidden>
+      Could not load blog posts.
+    </div>
+  </main>
+
+  <script src="scripts/nav-fetcher.js" defer></script>
+  <script src="scripts/blog-list.js" defer></script>
+</body>
+</html>

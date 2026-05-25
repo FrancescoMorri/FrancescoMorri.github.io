@@ -1,0 +1,10 @@
+[
+  {
+    "title": "First Post",
+    "slug": "testing",
+    "date": "2026-05-24",
+    "summary": "A short sample post to check Markdown, equations, code, tables, and graphics paths.",
+    "tags": ["test"],
+    "file": "posts/first_post.md"
+  }
+]
