@@ -6,5 +6,13 @@
     "summary": "A short sample post to check Markdown, equations, code, tables, and graphics paths.",
     "tags": ["test"],
     "file": "posts/first_post.md"
+  },
+  {
+    "title": "Does ChatGPT exists when not prompted?",
+    "slug": "does-chatgpt-exists-when-not-prompted",
+    "date": "2026-07-08",
+    "summary": "The discussion on whether an LLM is conscious or not should be directly linked to whether the model exists when not prompted.",
+    "tags": ["LLM", "consciousness"],
+    "file": "posts/proactive-llm.md"
   }
 ]
