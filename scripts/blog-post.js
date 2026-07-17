@@ -25,6 +25,10 @@
   function parseDate(value) {
     const raw = safeText(value);
     if (!raw) return null;
+    const dateOnly = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw);
+    if (dateOnly) {
+      return new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]));
+    }
     const time = Date.parse(raw);
     return Number.isFinite(time) ? new Date(time) : null;
   }

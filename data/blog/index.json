@@ -14,5 +14,13 @@
     "summary": "The discussion on whether an LLM is conscious or not should be directly linked to whether the model exists when not prompted.",
     "tags": ["LLM", "consciousness"],
     "file": "posts/proactive-llm.md"
+  },
+  {
+    "title": "Fighting Codex",
+    "slug": "fighting-codex",
+    "date": "2026-07-17",
+    "summary": "Codex refusing to implement the requested features.",
+    "tags": ["LLM", "agents"],
+    "file": "posts/fighting-codex.md"
   }
 ]
