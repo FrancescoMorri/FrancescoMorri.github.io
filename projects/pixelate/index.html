@@ -32,14 +32,6 @@
         <label for="angle">Rotation (degrees)
           <input id="angle" type="number" min="-360" max="360" step="1" value="0" required>
         </label>
-        <div class="color-controls">
-          <label for="black-color">Dark cells
-            <input id="black-color" type="color" value="#006400">
-          </label>
-          <label for="white-color">Light cells
-            <input id="white-color" type="color" value="#ffffe0">
-          </label>
-        </div>
       </form>
 
       <p id="status" role="status">Loading the example image.</p>
@@ -53,6 +45,14 @@
         </figure>
         <figure>
           <figcaption>Color preview</figcaption>
+        <div id="color-controls" class="controls color-controls" role="group" aria-label="Pattern colors">
+          <label for="black-color">Dark cells
+            <input id="black-color" type="color" value="#006400">
+          </label>
+          <label for="white-color">Light cells
+            <input id="white-color" type="color" value="#ffffe0">
+          </label>
+        </div>
           <canvas id="colors" role="img" aria-label="Pixel pattern in the selected colors"></canvas>
           <button id="save-colors" type="button">Save color PNG</button>
         </figure>
@@ -160,9 +160,9 @@
     controls.addEventListener("submit", (event) => event.preventDefault());
     controls.addEventListener("input", (event) => {
       if (event.target === imageInput) return;
-      if (event.target === blackColor || event.target === whiteColor) drawColors();
-      else updatePattern();
+      updatePattern();
     });
+    document.getElementById("color-controls").addEventListener("input", drawColors);
     imageInput.addEventListener("change", () => {
       if (imageInput.files[0]) loadSource(() => imageInput.files[0]);
     });
