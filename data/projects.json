@@ -142,5 +142,14 @@
     "link": "https://dailynewsscrape.streamlit.app/",
     "tags": ["web scraping", "news", "python"],
     "date": "30-10-2025"
+  },
+  { 
+    "title": "Image Pixelization",
+    "description": "Convert images to pixel art using Python",
+    "image": "data/projects_image/pixelization.png",
+    "imageAlt": "Image Pixelization preview image",
+    "link": "projects/pixelate/index.html",
+    "tags": ["image processing", "python"],
+    "date": "30-10-2025"
   }
 ]

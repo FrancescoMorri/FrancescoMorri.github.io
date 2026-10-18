@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Pixelate</title>
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div data-include="/partials/nav.html"></div>
+
+  <main class="container">
+    <header class="page-head">
+      <h1>Pixelate</h1>
+      <p class="page-sub">Turn an image into a two-color pixel pattern. Choose an image, then adjust the pixel size, threshold, and rotation. Larger factors make fewer cells. Higher thresholds make more cells dark. The pattern crops empty borders.</p>
+    </header>
+
+    <div class="stage">
+      <form id="controls" class="controls" aria-label="Pattern controls">
+        <label class="image-control" for="image">Image
+          <input id="image" type="file" accept="image/*">
+        </label>
+        <label for="factor">Pixel size factor
+          <input id="factor" type="number" min="1" step="1" value="4" required>
+        </label>
+        <label for="threshold">Threshold <output id="threshold-value" for="threshold">128</output>
+          <input id="threshold" type="range" min="0" max="255" value="128">
+        </label>
+        <label for="angle">Rotation (degrees)
+          <input id="angle" type="number" min="-360" max="360" step="1" value="0" required>
+        </label>
+        <div class="color-controls">
+          <label for="black-color">Dark cells
+            <input id="black-color" type="color" value="#006400">
+          </label>
+          <label for="white-color">Light cells
+            <input id="white-color" type="color" value="#ffffe0">
+          </label>
+        </div>
+      </form>
+
+      <p id="status" role="status">Loading the example image.</p>
+
+      <div id="previews" class="previews" hidden>
+        <figure>
+          <figcaption>Grid pattern</figcaption>
+          <canvas id="grid" role="img" aria-label="Black and white pixel pattern with grid lines"></canvas>
+          <p id="grid-size" class="grid-size"></p>
+          <button id="save-grid" type="button">Save grid PNG</button>
+        </figure>
+        <figure>
+          <figcaption>Color preview</figcaption>
+          <canvas id="colors" role="img" aria-label="Pixel pattern in the selected colors"></canvas>
+          <button id="save-colors" type="button">Save color PNG</button>
+        </figure>
+      </div>
+    </div>
+  </main>
+
+  <script src="/scripts/nav-fetcher.js" defer></script>
+  <script src="pixelate.js"></script>
+  <script>
+    const controls = document.getElementById("controls");
+    const imageInput = document.getElementById("image");
+    const factor = document.getElementById("factor");
+    const threshold = document.getElementById("threshold");
+    const angle = document.getElementById("angle");
+    const blackColor = document.getElementById("black-color");
+    const whiteColor = document.getElementById("white-color");
+    const gridCanvas = document.getElementById("grid");
+    const colorCanvas = document.getElementById("colors");
+    const status = document.getElementById("status");
+    let source;
+    let pattern;
+    let loadVersion = 0;
+
+    function drawColors() {
+      if (!pattern) return;
+      Pixelate.drawColors(colorCanvas, pattern, {
+        blackColor: blackColor.value,
+        whiteColor: whiteColor.value
+      });
+    }
+
+    function updatePattern() {
+      document.getElementById("threshold-value").value = threshold.value;
+      if (!source || !controls.checkValidity()) return;
+      pattern = Pixelate.process(source, {
+        factor: Number(factor.value),
+        threshold: Number(threshold.value),
+        angle: Number(angle.value)
+      });
+      document.getElementById("previews").hidden = false;
+      Pixelate.drawGrid(gridCanvas, pattern);
+      document.getElementById("grid-size").textContent =
+        `${pattern.width} blocks wide × ${pattern.height} blocks tall`;
+      drawColors();
+      status.textContent = `${pattern.width} × ${pattern.height} cells.` +
+        (pattern.hasBlack ? "" : " No dark cells at this threshold.");
+    }
+
+    async function loadSource(getFile) {
+      const version = ++loadVersion;
+      status.textContent = "Loading the image.";
+      try {
+        const file = await getFile();
+        const loaded = await Pixelate.loadImage(file);
+        if (version !== loadVersion) return;
+        source = loaded;
+        updatePattern();
+      } catch (error) {
+        if (version !== loadVersion) return;
+        status.textContent = "Could not load the image. Choose another image file.";
+      }
+    }
+
+    function savePNG(canvas, filename) {
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          status.textContent = "Could not save the PNG. Try again.";
+          return;
+        }
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }, "image/png");
+    }
+
+    document.getElementById("save-grid").addEventListener("click", () => {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const size = document.getElementById("grid-size").textContent;
+      ctx.font = "16px sans-serif";
+      canvas.width = Math.max(gridCanvas.width, Math.ceil(ctx.measureText(size).width) + 16);
+      canvas.height = gridCanvas.height + 36;
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(gridCanvas, 0, 0);
+      ctx.fillStyle = "black";
+      ctx.font = "16px sans-serif";
+      ctx.fillText(size, 8, gridCanvas.height + 24);
+      savePNG(canvas, "pixelate-grid.png");
+    });
+    document.getElementById("save-colors").addEventListener("click", () => {
+      savePNG(colorCanvas, "pixelate-colors.png");
+    });
+
+    new ResizeObserver(() => {
+      if (pattern) Pixelate.drawGrid(gridCanvas, pattern);
+    }).observe(document.getElementById("previews"));
+
+    controls.addEventListener("submit", (event) => event.preventDefault());
+    controls.addEventListener("input", (event) => {
+      if (event.target === imageInput) return;
+      if (event.target === blackColor || event.target === whiteColor) drawColors();
+      else updatePattern();
+    });
+    imageInput.addEventListener("change", () => {
+      if (imageInput.files[0]) loadSource(() => imageInput.files[0]);
+    });
+
+    loadSource(async () => {
+      const response = await fetch("/data/projects_image/pixelate.png");
+      if (!response.ok) throw new Error("Could not load the example image.");
+      return response.blob();
+    });
+  </script>
+</body>
+</html>

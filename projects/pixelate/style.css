@@ -1,0 +1,98 @@
+.stage {
+  width: 100%;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 140px;
+  min-width: 0;
+  font-size: 0.9rem;
+}
+
+.controls .image-control {
+  flex-basis: 100%;
+}
+
+.controls input {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  font: inherit;
+}
+
+.controls input[type="number"] {
+  width: 100%;
+  padding: 0.35rem;
+}
+
+.controls input[type="color"] {
+  width: 100%;
+  height: 2rem;
+}
+
+.controls input:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.controls output {
+  font-variant-numeric: tabular-nums;
+}
+
+.previews {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.previews[hidden] {
+  display: none;
+}
+
+.previews figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.previews figcaption {
+  margin-bottom: 0.5rem;
+}
+
+.previews button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.previews canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.color-controls {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 1rem;
+}
+
+.grid-size {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
