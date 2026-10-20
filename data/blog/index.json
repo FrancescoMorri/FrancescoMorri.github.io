@@ -22,5 +22,13 @@
     "summary": "Codex refusing to implement the requested features.",
     "tags": ["LLM", "agents"],
     "file": "posts/fighting-codex.md"
+  },
+  {
+    "title": "The Incredible Effectiveness of ISAC in Social Dilemmas",
+    "slug": "the-incredible-effectiveness-of-isac-in-social-dilemmas",
+    "date": "2026-10-20",
+    "summary": "ISAC's superior performance in social dilemma scenarios.",
+    "tags": ["MARL", "social dilemmas"],
+    "file": "posts/isac.md"
   }
 ]
